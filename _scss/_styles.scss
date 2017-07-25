@@ -1,0 +1,42 @@
+
+// Converted Variables
+
+
+// Custom Media Query Variables
+
+
+/*
+
+  STYLES
+
+  Add custom styles here.
+
+*/
+
+.bg-index-header {
+  background-image: url('../images/index-header.jpg');
+}
+
+.bg-texture {
+  background-image: url('../images/texture-bg.jpg');
+}
+
+.bg-texture-dark {
+  background-image: url('../images/dark-texture-bg.jpg');
+}
+
+.bg-texture-yellow {
+  background-image: url('../images/yellow-texture-bg.jpg');
+}
+
+.bg-texture-black {
+  background-image: url('../images/black-texture-bg.jpg');
+}
+
+.embed-responsive-16by9::before {
+  padding-top: 56.25%;
+}
+
+.close-modal {
+  width: 25px;
+}

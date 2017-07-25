@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>{{ page.title }}</title>
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="/css/main.css">
+
+    </head>
+    <body>
+      <nav class="bg-black">
+        <div class="mw8 center ph3 ph0-ns db flex-l items-center w-100 border-box pv3">
+          <a class="db tc tl-l mid-gray link dim mb2 mb0-l mx-auto mr-auto" href="/" title="Home">
+            <img src="/images/tgf-logo.png" class="db dib-l v-mid tc tl-l center" alt="{{site.name}} logo">
+            <h1 class="ttu white dib f4 ma0 ml2-l  relative mt3 lh-solid">The Garment Factory</h1>
+          </a>
+          <div class="db tc tr-l">
+            {% for item in site.navigation %}
+              {% assign class = nil %}
+              {% if page.url contains item.url %}
+                  {% assign class = 'active' %}
+              {% endif %}
+              <a class="{{class}} link dim white f6 f5-l dib ml3 ml5-l" href="{{ item.url }}" title="{{ item.title }}">{{ item.title }}</a>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+      </nav>
+
+
+          {{ content }}
+
+      <footer class="pv4 bg-texture-black white">
+        <div class="mw8 ph3 ph0-ns center">
+          <div class="flex flex-column flex-row-ns justify-between-ns mt4 items-center-ns">
+            <div class="w-100 w-50-ns pr3-m pr5-l">
+              <p class="tracked">&copy; {{site.name}}, Merchant City</p>
+              <ul class="list pa0 tracked">
+                <li class="db pv2">
+                  <a class="link yellow hover-white underline" href="/about">About us</a>
+                </li>
+                <li class="db pv2">
+                  <a class="link yellow hover-white underline" href="/contact">Contact us</a>
+                </li>
+                <li class="db pv2">
+                  <a class="link yellow hover-white underline" href="/bruchure.pdf">Brochure</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="w-100 w-50-ns pl3-m pl5-l lh-copy tracked mt4 mt0-ns">
+              <img src="/images/in-the-loop-logo.png" alt="In the Loop logo">
+              <p>Want to keep updated?
+                <br>
+                <a class="link yellow hover-white underline" href="#">sign up</a> for the newsletter
+              </p>
+            </div>
+          </div><!-- /flex -->
+
+        </div>
+      </footer>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script async defer src="/js/player.min.js"></script>
+    <script async defer src="/js/scripts.js"></script>
+    </body>
+</html>

@@ -1,0 +1,17 @@
+name: The Garment Factory
+markdown: redcarpet
+highlighter: pygments # or rouge or null
+exclude: ["node_modules", "gulpfile.js", "package.json"]
+
+# Navigation
+navigation:
+  - title: Office
+    url: /office
+  - title: Retail
+    url: /retail/
+  - title: Location
+    url: /location/
+  - title: Info
+    url: /info/
+  # - title: Downloads
+  #   url: /downloads/
