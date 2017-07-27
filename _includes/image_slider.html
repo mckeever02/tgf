@@ -1,0 +1,13 @@
+<div id="gallery" class="center">
+  <div class="mt5 relative">
+    <div class="slider tc">
+      {% for item in page.image_slider %}
+      <div class="tc center d-inline-block">
+        <img src="/images/{{item.image}}.jpg" alt="{{item.title}}">
+        <p class="pv2 tracked-mega">{{item.title}}</p>
+      </div>
+      {%endfor%}
+    </div><!-- /slider -->
+    <div class="arrows-container"></div>
+  </div>
+</div>

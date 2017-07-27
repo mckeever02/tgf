@@ -29,16 +29,31 @@
           </div>
         </div>
       </nav>
+      {%if page.sub_nav%}
+        <div class="bg-yellow sticky top-0 z-999">
+          <div class="mw8 center w-100 flex-ns justify-end-ns">
+            <ul class="list pa0 ma0 tracked-mega nowrap overflow-x-auto">
+              <li class="dib">
+                {% for nav_item in page.sub_nav %}
+                <a class="dib f6 link pv2 pl3 tc black hover-white" href="#{{nav_item | stringify | downcase | strip }}">
+                  {{nav_item}}
+                </a>
+                {% endfor %}
+              </li>
+            </ul>
+          </div><!-- /mw8 -->
+        </div>
+      {%endif%}
 
 
-          {{ content }}
+      {{ content }}
 
-      <footer class="pv4 bg-texture-black white">
+      <footer class="pv4 bg-texture-black white tracked-mega">
         <div class="mw8 ph3 ph0-ns center">
           <div class="flex flex-column flex-row-ns justify-between-ns mt4 items-center-ns">
             <div class="w-100 w-50-ns pr3-m pr5-l">
-              <p class="tracked">&copy; {{site.name}}, Merchant City</p>
-              <ul class="list pa0 tracked">
+              <p>&copy; {{site.name}}, Merchant City</p>
+              <ul class="list pa0">
                 <li class="db pv2">
                   <a class="link yellow hover-white underline" href="/about">About us</a>
                 </li>
@@ -46,12 +61,12 @@
                   <a class="link yellow hover-white underline" href="/contact">Contact us</a>
                 </li>
                 <li class="db pv2">
-                  <a class="link yellow hover-white underline" href="/bruchure.pdf">Brochure</a>
+                  <a class="link yellow hover-white underline" href="/bruchure.pdf">Download Brochure</a>
                 </li>
               </ul>
             </div>
 
-            <div class="w-100 w-50-ns pl3-m pl5-l lh-copy tracked mt4 mt0-ns">
+            <div class="w-100 w-50-ns pl3-m pl5-l lh-copy mt4 mt0-ns">
               <img src="/images/in-the-loop-logo.png" alt="In the Loop logo">
               <p>Want to keep updated?
                 <br>
@@ -63,10 +78,33 @@
         </div>
       </footer>
 
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
     <script async defer src="/js/player.min.js"></script>
     <script async defer src="/js/scripts.js"></script>
+
+    {%if page.class == "index"%}
+    <script>
+    $(function() {
+      var iframe = document.getElementById('welcomeVideo');
+      var player = $f(iframe);
+      $('.playFilm').on("click", function(ev) {
+        $('#videoModal').addClass('db');
+        $('#welcomeVideo')[0].src += "&autoplay=1";
+        ev.preventDefault();
+      })
+      $('.close-modal').on("click", function() {
+        $('#videoModal').removeClass('db');
+        player.api("pause");
+      })
+
+      $('.slider').slick({
+        lazyLoad: 'ondemand',
+        slidesToShow: 3,
+        slidesToScroll: 1
+      });
+    });
+    </script>
+    {%endif%}
     </body>
 </html>

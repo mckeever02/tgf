@@ -13,24 +13,64 @@
 
 */
 
-.bg-index-header {
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media #{$breakpoint-not-small} {
+  .bg-header {
+    min-height: 560px;
+  }
+}
+
+.active {
+  color: $yellow;
+  text-decoration: underline;
+}
+
+.bg-header-index {
   background-image: url('../images/index-header.jpg');
 }
 
-.bg-texture {
-  background-image: url('../images/texture-bg.jpg');
+.bg-header-office {
+  background-image: url('../images/office-header.jpg');
 }
 
-.bg-texture-dark {
-  background-image: url('../images/dark-texture-bg.jpg');
+.bg-header-retail {
+  background-image: url('../images/retail-header.jpg');
+}
+
+.bg-header-location {
+  background-image: url('../images/location-header.jpg');
+}
+
+.bg-header-info {
+  background-image: url('../images/info-header.jpg');
+}
+
+.bg-texture {
+  background-image: url('../images/texture.png');
+}
+
+.bg-texture-moon-gray {
+  background-image: url('../images/texture.png'), linear-gradient($moon-gray, $moon-gray);
+}
+
+.bg-texture-mid-gray {
+  background-image: url('../images/texture.png'), linear-gradient($mid-gray, $mid-gray);
 }
 
 .bg-texture-yellow {
-  background-image: url('../images/yellow-texture-bg.jpg');
+  background-image: url('../images/texture.png'), linear-gradient($yellow, $yellow);
 }
 
 .bg-texture-black {
-  background-image: url('../images/black-texture-bg.jpg');
+  background-image: url('../images/texture.png'), linear-gradient($black, $black);
+}
+
+.bg-texture-white {
+  background-image: url('../images/texture.png'), linear-gradient($white, $white);
 }
 
 .embed-responsive-16by9::before {
@@ -39,4 +79,31 @@
 
 .close-modal {
   width: 25px;
+}
+
+.tab-active {
+  background-color: $black;
+  color: $white;
+}
+
+progress[value] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: $gray;
+  &::-webkit-progress-bar {
+    background-color: $moon-gray;
+  }
+  &::-webkit-progress-value {
+    background-color: $yellow;
+  }
+}
+
+.progress-icon {
+  top: .5em;
+  padding-right: -15em;
+}
+
+.progress-icon-drive {
+  top: 0;
+  padding-right: -15em;
 }

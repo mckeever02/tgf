@@ -1,18 +1,13 @@
 ---
 layout: default
 title: The Garment Factory
+class: index
+hero_button: true
 ---
 
-<div class="bg-black dt w-100 relative">
-  <div class="cover bg-index-header bg-center">
-    <div class="absolute w-100 h-100 bg-black-30 z-1"></div>
-    <div class="mw8 center ph3 ph0-l z-2 relative pv6">
-      <h2 class="f1 f-headline-l ttu measure lh-solid white ma0 mb4">Where<br> Ideas<br> Are<br> <span class="yellow">Made</span></h2>
-      <a class="bg-black white f4 pa3 underline dashed hover-bg-dark-gray link tracked" href="#">Make an Enquiry</a>
-    </div>
-  </div>
-</div>
-<div class="bg-texture">
+{%include hero.html%}
+
+<div class="bg-texture-moon-gray">
   <div class="mw8 center ph3 ph0-l">
     <div class="bg-white w-50-l pa4 nt5 relative z-2">
       <p class="lh-copy ma0 tracked">The Garment Factory is a unique space in Glasgow’s Merchant City, where the environment is as innovative and creative as the tenants. Our vision is to create contemporary flexible office space designed to appeal to a range of tenants. </p>
@@ -85,7 +80,7 @@ title: The Garment Factory
   </div><!-- /mw8 -->
 </div><!-- /bg-texture -->
 
-<div class="bg-texture-dark pv4 white">
+<div class="bg-texture-mid-gray pv4 white">
   <div class="mw8 center ph3 ph0-l">
     <div class="flex flex-column flex-row-ns justify-between-ns items-center-ns">
       <div class="w-100 w-50-ns pr3-m pr5-l">
@@ -103,23 +98,7 @@ title: The Garment Factory
 
 <div class="bg-texture-yellow pv5 black">
   <div class="mw8 center ph3 ph0-l">
-    <h4 class="ttu f2 ma0 mb5">All Enquiries:</h4>
-    <div class="flex flex-column flex-row-ns">
-      <div class="db pr5-ns">
-        <img src="/images/ryden-logo.png" alt="Ryden logo">
-        <div class="tracked">
-          <p class="ma0 mt3">
-            Tim Jacobsen<br>
-            <a class="link black hover-white underline" href="mailto:tim.jacobsen@ryden.co.uk">tim.jacobsen@ryden.co.uk</a>
-          </p>
-        </div>
-
-      </div>
-
-      <div class="db mt4 mt0-ns">
-        <img src="/images/bnp-logo.png" alt="BNP Real Estate logo">
-      </div>
-    </div><!-- /flex -->
+    {%include enquiries.html%}
   </div>
 </div>
 

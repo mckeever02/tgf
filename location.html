@@ -1,0 +1,116 @@
+---
+layout: default
+title: Location
+class: location
+hero_title: "Location"
+sub_nav:
+  - Merchant City
+  - Gallery
+  - Local Area
+  - Connections
+
+image_slider:
+  - image: reception-waiting-area
+    title: Reception waiting area
+  - image: reception-waiting-area
+    title: Reception waiting area
+  - image: reception-waiting-area
+    title: Reception waiting area
+
+connections:
+  - location: High Street
+    destination: Train Station
+    time: 5.0
+    movement: walk
+  - location: Argyle Street
+    destination: Train Station
+    time: 6.0
+    movement: walk
+  - location: Queen Street
+    destination: Train Station
+    time: 9.0
+    movement: walk
+  - location: Buchanan Street
+    destination: Subway Station
+    time: 9.0
+    movement: walk
+  - location: Glasgow Central
+    destination: Train Station
+    time: 10.0
+    movement: walk
+  - location: M8 Motorway
+    time: 4.0
+    movement: drive
+  - location: Glasgow Airport
+    time: 14.0
+    movement: drive
+
+
+---
+
+
+{%include hero.html%}
+
+<div class="bg-texture-moon-gray">
+  <div class="mw8 center ph3 ph0-l">
+    <div class="bg-white w-50-l pa4 nt5 relative z-2">
+      <p class="lh-copy ma0 tracked">The Garment Factory is located in the heart of the vibrant Merchant City and only a 2 minute walk from Merchant Square, a well known food, drink and nightlife destination.</p>
+    </div>
+
+
+    <div class="mt5">
+      <div class="flex flex-column flex-row-l">
+        <div class="w-100 pr5-ns">
+          <h2 class="ttu f1 black">Merchant<br> City</h2>
+
+          <div class="measure-narrow-l measure-m tracked-mega lh-copy">
+            <p>Merchant City is just minutes away from George Square and the Style Mile shopping district.It is one of Glasgow’s most vibrant areas brimming with art, culture, and fashion and complete with fabulous places to eat and drink. It hosts a number of nationally recognised restaurant names alongside eclectic independent bars, galleries and quirky little shops to explore.</p>
+
+            <p>Also just moments away sits Merchant Square – a stylish hub of independent bars and restaurants all under one roof.</p>
+          </div>
+
+        </div>
+        <div class="w-100 pt3 pt5-ns tc tl-l">
+          <img class="nb5-l z-2 relative" src="/images/merchant-sq-1.jpg" alt="Image of Merchant Square">
+          <img class="nl5-l" src="/images/merchant-sq-2.jpg" alt="Image of Merchant Square">
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {%include image_slider.html%}
+
+</div><!-- /bg-texture -->
+<div id="connections" class="bg-texture-white pv5">
+  <div class="mw8 center ph3 ph0-l">
+    <h2 class="ttu f1 black tc">Connections</h2>
+
+    <div class="mt5 tracked-mega f6">
+      {% for item in page.connections %}
+      {% assign total_time = 18.0 %}
+        <div class="flex flex-row w-100 items-center">
+          <div class="w-90 pr3 relative">
+            <span class="db">{{item.location}}</span>
+            <span class="db mb2">{{item.destination}}</span>
+            {% assign number = item.time | divided_by: total_time | times: 100 | round | minus: 5 %}
+            {%if item.movement == "walk"%}
+            <img class="absolute dn db-ns progress-icon" style="left: {{number}}%" src="/images/walk-icon.png" alt="Walking icon">
+            {%else%}
+            <img class="absolute dn db-ns progress-icon progress-icon-drive {{number}}" style="left: {{number}}%" src="/images/drive-icon.png" alt="Driving icon">
+            {%endif%}
+            <progress class="w-100 progress" max="{{total_time}}" value="{{item.time}}"></progress>
+          </div>
+          <div class="w-10 tc mt3">
+            <span class="db f2">{{item.time | round}}</span>
+            <small class="db ttu">mins</small>
+          </div>
+        </div>
+      {% endfor %}
+
+
+
+    </div>
+
+  </div>
+</div>

@@ -22,6 +22,8 @@
 .absolute  { position: absolute; }
 .fixed  { position: fixed; }
 
+.sticky {position: sticky;}
+
 @media #{$breakpoint-not-small} {
   .static-ns { position: static; }
   .relative-ns  { position: relative; }

@@ -1,0 +1,182 @@
+---
+layout: default
+title: Office
+class: office
+hero_title: "Office"
+sub_nav:
+  - Gallery
+  - Accommodation
+  - Plans
+  - Specification
+  - Downloads
+
+image_slider:
+  - image: reception-waiting-area
+    title: Reception waiting area
+  - image: reception-waiting-area
+    title: Reception waiting area
+  - image: reception-waiting-area
+    title: Reception waiting area
+
+floor_area:
+  - floor: 6th
+    foot: "8,380"
+    metres: 778.5
+  - floor: 5th
+    foot: "8,364"
+    metres: 777
+  - floor: 4th
+    foot: "8,396"
+    metres: 780
+  - floor: 3rd
+    foot: "8,396"
+    metres: 780
+  - floor: 2nd
+    foot: "8,288"
+    metres: 770
+  - floor: 1st
+    foot: "5,586"
+    metres: 519
+
+downloads:
+  - title: Office Brochure
+    link: office-brochure.pdf
+  - title: Floor Plans
+    link: floor-plans.pdf
+  - title: Space Plans
+    link: space-plans.pdf
+---
+
+
+{%include hero.html%}
+
+<div class="bg-texture-moon-gray">
+  <div class="mw8 center ph3 ph0-l">
+    <div class="bg-white w-50-l pa4 nt5 relative z-2">
+      <p class="lh-copy ma0 tracked">The Garment Factory combines many of the original features, including exposed ceilings, steel and brickwork, wooden flooring and ornate staircases as well as the introduction of contemporary finishes, creating a 21st century workplace.</p>
+    </div>
+  </div>
+
+  {%include image_slider.html%}
+
+  <div id="accommodation" class="bg-texture-white pv5">
+    <div class="mw7 center ph3 ph0-l">
+      <h2 class="black ttu f1">Accommodation</h2>
+
+      <div class="overflow-auto">
+        <table class="w-100 center tracked" cellspacing="0">
+          <thead>
+            <tr>
+              <th class="pl3 tl bb b--black pv2 normal" colspan="3">Floor Area</th>
+            </tr>
+          </thead>
+          <tbody class="lh-copy">
+            {%for row in page.floor_area%}
+            <tr>
+              <td class="pl3 pv2 pr3">{{row.floor}} Floor</td>
+              <td class="pv2 pr3 tc">{{row.foot}} sq ft</td>
+              <td class="pv2 pr3 tr">{{row.metres}} sq m</td>
+            </tr>
+            {%endfor%}
+          </tbody>
+          <tfoot class="bg-yellow">
+            <tr>
+              <td class="pl3 pv2 pr3">Total</td>
+              <td class="pv2 pr3 tc">47,969 sq ft</td>
+              <td class="pv2 pr3 tr">4456.5 sq m</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+
+      <div id="plans" class="flex flex-column flex-row-ns justify-between-ns mt5 pv5">
+        <div class="w-30-ns mr4-ns">
+          <h2 class="black ttu f1 mt0">Plans</h2>
+
+          <ul class="list tracked pl0 tabs" data-tabgroup="floor-tabs">
+            {% assign count = 6 %}
+            {%for row in page.floor_area%}
+            <li>
+              <a class="dib {% if count == 6 %} tab-active {%endif%} link underline black hover-bg-yellow pv2 ph3 tc" href="#floor{{count}}">{{row.floor}} Floor</a>
+            </li>
+            {% assign count = count | minus: 1 %}
+            {%endfor%}
+          </ul>
+
+          <div class="mt5">
+
+
+            <div class="tracked-mega mt5 ph3">
+              <div class="flex align-items-center pv1">
+                <span class=" h1 w1 dib br-pill ba b--black bg-yellow align-middle "></span>
+                <span class="dib ml2 align-middle">Office</span>
+              </div>
+              <div class="flex align-items-center pv1">
+                <span class=" h1 w1 dib br-pill ba b--black bg-orange align-middle"></span>
+                <span class="dib ml2 align-middle">Retail</span>
+              </div>
+              <div class="flex align-items-center pv1">
+                <span class=" h1 w1 dib br-pill ba b--black bg-light-gray align-middle"></span>
+                <span class="dib ml2 align-middle">Core</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+        <div id="floor-tabs" class="tabgroup w-100">
+          {% assign count = 6 %}
+          {%for row in page.floor_area%}
+            <div id="floor{{count}}" class="flex flex-row-reverse">
+              <div class="db">
+                <div class="ba b--black ph3 pv2 tracked-mega w-100">
+                  <span class="db lh-copy">{{row.foot}} sq ft</span>
+                  <span class="db lh-copy">{{row.metres}} sq m</span>
+                </div>
+              </div>
+              <div class="db">
+                <img src="/images/1st-floor.jpg" alt="1st Floor">
+              </div>
+            </div>
+          {% assign count = count | minus: 1 %}
+          {%endfor%}
+        </div><!-- /tabgroup -->
+
+      </div>
+    </div><!-- /mw7 -->
+  </div><!-- /bg-texture -->
+
+  <div id="specification" class="bg-texture-mid-gray pv5 white">
+    <div class="mw7 center ph3 ph0-l">
+      <h2 class="ttu f1 mt0">Specification</h2>
+
+      <ul class="pl0 tracked-mega list list-dashed list-yellow">
+        <li class="pv2">New contemporary double height entrance</li>
+        <li class="pv2">Manned reception</li>
+        <li class="pv2">Touch down space, coffee station and informal waiting area</li>
+        <li class="pv2">New high speed lifts</li>
+        <li class="pv2">New male, female and disabled toilets per floor</li>
+        <li class="pv2">Basement cycle storage and shower facilities</li>
+        <li class="pv2">Track LED lighting</li>
+        <li class="pv2">High quality wooden flooring</li>
+        <li class="pv2">Air conditioning</li>
+        <li class="pv2">Target EPC C</li>
+      </ul>
+
+    </div>
+  </div>
+
+  <div id="downloads" class="bg-texture-yellow pv5 black">
+    <div class="mw7 center ph3 ph0-l">
+      <h2 class="ttu f1 mt0">Downloads</h2>
+
+      <ul class="list pl0">
+      {%for download in page.downloads%}
+        <li class="db pv4">
+          <a class="{{site.button_classes}}" href="{{download.link}}">{{download.title}}</a>
+        </li>
+      {%endfor%}
+      </ul>
+
+    </div>
+  </div>

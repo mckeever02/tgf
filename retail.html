@@ -1,0 +1,213 @@
+---
+layout: default
+title: Retail
+class: retail
+hero_title: "Retail"
+sub_nav:
+  - Stats
+  - Gallery
+  - Accommodation
+  - Plans
+  - Downloads
+stats_slider:
+  - shoppers
+  - workers
+  - spend
+  - population
+
+image_slider:
+  - image: reception-waiting-area
+    title: Reception waiting area
+  - image: reception-waiting-area
+    title: Reception waiting area
+  - image: reception-waiting-area
+    title: Reception waiting area
+
+floor_area:
+  - floor: 1st Floor
+    unit_1:
+      foot: "2,669"
+      metres: "248"
+  - floor: Ground
+    unit_1:
+      foot: "2,917"
+      metres: "271"
+    unit_2:
+      foot: "3,192"
+      metres: "297"
+  - floor: Basement
+    unit_1:
+      foot: "2,594"
+      metres: "241"
+    unit_2:
+      foot: "3,025"
+      metres: "281"
+
+downloads:
+  - title: Retail Brochure
+    link: retail-brochure.pdf
+  - title: Floor Plans
+    link: floor-plans.pdf
+
+---
+
+
+{%include hero.html%}
+
+<div class="bg-texture-moon-gray">
+  <div class="mw8 center ph3 ph0-l">
+    <div class="bg-white w-50-l pa4 nt5 relative z-2">
+      <p class="lh-copy ma0 tracked">The Garment Factory combines many of the original features, including exposed ceilings, steel and brickwork, wooden flooring and ornate staircases as well as the introduction of contemporary finishes, creating a 21st century workplace.</p>
+    </div>
+  </div>
+
+
+  <div id="stats" class="pv5">
+    <div class="mw7 center ph3 ph0-l">
+      <div class="slider-dots">
+        {% for item in page.stats_slider %}
+        <div class="tc center">
+          <img src="/images/{{item}}-slide.png" alt="{{item}} Illustration">
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {%include image_slider.html%}
+
+  <div id="accommodation" class="bg-texture-white pv5">
+    <div class="mw7 center ph3 ph0-l">
+      <h2 class="black ttu f1">Accommodation</h2>
+
+      <div class="tracked-mega">
+        <p class="lh-copy">2 unique restaurant/bar opportunities on the lower levels with offices above extending to circa 3,534 sq m (38,040 sq ft) over the upper 5 levels.</p>
+
+        <ul class="list pl0 list-dashed">
+          <li class="pv2">Mixed-use development</li>
+          <li class="pv2">2 premium restaurant/leisure units</li>
+        </ul>
+      </div>
+
+      <div class="overflow-auto">
+        <table class="w-100 center tracked mb4" cellspacing="0">
+          <thead class="bg-yellow">
+            <tr>
+              <th class="pl3 tl pv2 normal" colspan="3">Restaurant/Leisure Unit 1	</th>
+            </tr>
+          </thead>
+          <tbody class="lh-copy">
+            <tr>
+              <td class="pl3 pv2 pr3">1st Floor</td>
+              <td class="pv2 pr3 tc">2,669 sq ft</td>
+              <td class="pv2 pr3 tr">248 sq m</td>
+            </tr>
+            <tr>
+              <td class="pl3 pv2 pr3">Ground</td>
+              <td class="pv2 pr3 tc">2,917 sq ft</td>
+              <td class="pv2 pr3 tr">271 sq m</td>
+            </tr>
+            <tr>
+              <td class="pl3 pv2 pr3">Basement</td>
+              <td class="pv2 pr3 tc">2,594 sq ft</td>
+              <td class="pv2 pr3 tr">241 sq m</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="w-100 center tracked" cellspacing="0">
+          <thead class="bg-orange">
+            <tr>
+              <th class="pl3 tl pv2 normal" colspan="3">Restaurant/Leisure Unit 2</th>
+            </tr>
+          </thead>
+          <tbody class="lh-copy">
+            <tr>
+              <td class="pl3 pv2 pr3">Ground</td>
+              <td class="pv2 pr3 tc">3,192 sq ft</td>
+              <td class="pv2 pr3 tr">297 sq m</td>
+            </tr>
+            <tr>
+              <td class="pl3 pv2 pr3">Basement</td>
+              <td class="pv2 pr3 tc">3,025 sq ft</td>
+              <td class="pv2 pr3 tr">281 sq m</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tracked-mega">
+        <p class="underline">Quoting Rentals upon application</p>
+        <p>The floor areas stated above are approximate gross internal areas only</p>
+      </div>
+
+      <div id="plans" class="flex flex-column flex-row-ns justify-between-ns mt5 pv5">
+        <div class="w-30-ns mr4-ns">
+          <h2 class="black ttu f1 mt0">Plans</h2>
+
+          <ul class="list tracked pl0 tabs" data-tabgroup="floor-tabs">
+            {% assign count = 6 %}
+            {%for row in page.floor_area%}
+            <li>
+              <a class="dib {% if count == 6 %} tab-active {%endif%} link underline black hover-bg-yellow pv2 ph3 tc" href="#floor{{count}}">{{row.floor}}</a>
+            </li>
+            {% assign count = count | minus: 1 %}
+            {%endfor%}
+          </ul>
+
+        </div>
+        <div id="floor-tabs" class="tabgroup w-100">
+          {% assign count = 6 %}
+          {%for row in page.floor_area%}
+            <div id="floor{{count}}" class="flex flex-column flex-row-reverse-ns">
+              <div class="db">
+                <div class="ba b--black ph3 pv3 tracked-mega w-100">
+                  <div class="db mb3">
+                    <div class="dt mb2">
+                      <span class="h1 w1 dtc br-pill ba b--black bg-yellow align-middle"></span>
+                      <div class="dtc">
+                        <span class="align-middle underline pl3">Unit 1</span>
+                      </div>
+                    </div>
+                    <div class="pl4">
+                      <span class="db lh-copy">{{row.unit_1.foot}} sq ft</span>
+                      <span class="db lh-copy">{{row.unit_1.metres}} sq m</span>
+                    </div>
+                  </div>
+                  {%if row.unit_2 %}
+                  <div class="db">
+                    <div class="dt mb2">
+                      <span class="h1 w1 dtc br-pill ba b--black bg-orange align-middle"></span>
+                      <div class="dtc">
+                        <span class="align-middle underline pl3">Unit 2</span>
+                      </div>
+                    </div>
+                    <div class="pl4">
+                      <span class="db lh-copy">{{row.unit_2.foot}} sq ft</span>
+                      <span class="db lh-copy">{{row.unit_2.metres}} sq m</span>
+                    </div>
+                  </div>
+                  {%endif%}
+                </div>
+              </div>
+              <div class="db">
+                <img src="/images/{{row.floor | downcase}}.png" alt="{{row.floor}} Blueprint">
+              </div>
+            </div>
+          {% assign count = count | minus: 1 %}
+          {%endfor%}
+        </div><!-- /tabgroup -->
+
+      </div>
+    </div><!-- /mw7 -->
+  </div><!-- /bg-texture -->
+
+  <div id="downloads" class="bg-texture-yellow pv5 black">
+    <div class="mw7 center ph3 ph0-l">
+      <h2 class="ttu f1 mt0">Downloads</h2>
+      {%for download in page.downloads%}
+          <a class="{{site.button_classes}} mr4-ns" href="{{download.link}}">{{download.title}}</a>
+      {%endfor%}
+
+    </div>
+  </div>

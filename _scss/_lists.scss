@@ -13,3 +13,15 @@
 */
 
 .list {         list-style-type: none; }
+
+.list-dashed {
+  li:before {
+    content: "- ";
+  }
+}
+
+.list-yellow {
+  li:before {
+    color: $yellow;
+  }
+}

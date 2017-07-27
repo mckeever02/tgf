@@ -15,3 +15,16 @@ navigation:
     url: /info/
   # - title: Downloads
   #   url: /downloads/
+
+
+permalink: pretty
+
+button_classes: bg-black white f4 pa3 underline dashed hover-bg-dark-gray link tracked-mega tc
+
+downloads:
+  - title: Office Brochure
+    link: office-brochure.pdf
+  - title: Floor Plans
+    link: floor-plans.pdf
+  - title: Space Plans
+    link: space-plans.pdf

@@ -1,0 +1,58 @@
+---
+layout: default
+title: Info
+class: info
+hero_title: "Info"
+downloads:
+  office:
+    - title: "Office Brochure"
+      link: office-brochure.pdf
+    - title: "Floor Plans"
+      link: floor-plans.pdf
+    - title: "Space Plans"
+      link: space-plans.pdf
+  retail:
+    - title: "Retail Brochure"
+      link: retail-brochure.pdf
+    - title: "Floor Plans"
+      link: floor-plans-retail.pdf
+---
+
+
+{%include hero.html%}
+
+<div class="bg-texture-yellow">
+  <div class="mw8 center ph3 ph0-l">
+    <div class="bg-white w-50-l pa4 nt5 relative z-2">
+      <p class="lh-copy ma0 tracked">The brochures and plans are available to download using the links below. If you would like more information or would like to arrange a viewing, please use one of the contacts listed at the bottom of the page.</p>
+    </div>
+
+
+    <div class="mt5">
+      <h2 class="ttu f1 black">Downloads</h2>
+
+      <h3 class="f5 underline tracked-mega mb3">Office</h3>
+      <div class="flex flex-column flex-row-ns">
+        {%for download in page.downloads.office %}
+          <a class="{{site.button_classes}} mb4 mr4-ns" href="{{download.link}}" title="CLick to download {{download.title}}">{{download.title}}</a>
+        {%endfor%}
+      </div>
+
+      <h3 class="f5 underline tracked-mega mb3">Retail</h3>
+      <div class="flex flex-column flex-row-ns">
+        {%for download in page.downloads.office %}
+          <a class="{{site.button_classes}} mb4 mr4-ns" href="{{download.link}}" title="CLick to download {{download.title}}">{{download.title}}</a>
+        {%endfor%}
+      </div>
+
+    </div>
+
+    <div class="mt5">
+      {%include enquiries.html%}
+    </div>
+
+  </div>
+
+  {%include image_slider.html%}
+
+</div><!-- /bg-texture -->
