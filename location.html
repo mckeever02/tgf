@@ -45,6 +45,51 @@ connections:
     time: 14.0
     movement: drive
 
+map:
+  - title: "Deloitte"
+    type: "occupier"
+  - title: "HM Revenue & Customs"
+    type: "occupier"
+  - title: "The Drum"
+    type: "occupier"
+  - title: "University of Strathclyde"
+    type: "occupier"
+  - title: "Anderson Strathearn"
+    type: "occupier"
+  - title: "Glasgow City Marketing Bureau"
+    type: "occupier"
+  - title: "Bridgestone Independent Investment Management"
+    type: "occupier"
+  - title: "Gandolfi Fish"
+    type: "food-drink"
+  - title: "Hutchisons Bar & Brasserie"
+    type: "food-drink"
+  - title: "Guys"
+    type: "food-drink"
+  - title: "Sapporo Teppanyaki"
+    type: "food-drink"
+  - title: "Cafe Gandolfi"
+    type: "food-drink"
+  - title: "Bacchus"
+    type: "food-drink"
+  - title: "Babbity Bowster"
+    type: "food-drink"
+  - title: "The Wilson Street Pantry"
+    type: "food-drink"
+  - title: "Cruise"
+    type: "shopping"
+  - title: "Ralph Lauren"
+    type: "shopping"
+  - title: "Buchanan Galleries"
+    type: "shopping"
+  - title: "Mulberry"
+    type: "shopping"
+  - title: "Sainsbury's Local"
+    type: "shopping"
+  - title: "Marks & Spencer"
+    type: "shopping"
+  - title: "Tesco Express"
+    type: "shopping"
 
 ---
 
@@ -81,10 +126,87 @@ connections:
 
   {%include image_slider.html%}
 
+
+  <div id="local-area" class="overflow-auto">
+      <div class="relative center map bg-center contain center nowrap">
+        {%for item in page.map %}
+
+          {% assign borderColor = nil %}
+          {% if item.type contains 'occupier' %}
+            {% assign borderColor = 'b--white' %}
+          {% elsif item.type contains 'food-drink' %}
+            {% assign borderColor = 'b--black' %}
+          {% else %}
+            {% assign borderColor = 'b--gray' %}
+          {%endif%}
+          <span id="{{ item.title | slugify | append: "-tooltip" }}" tooltip="{{item.title}}" title="{{item.title}}" class="marker absolute z-2 {{item.title | slugify | prepend: "marker-"}} bw2 h1 w1 dtc br-pill ba {{borderColor}} bg-yellow"></span>
+        {%endfor%}
+      </div>
+
+  </div>
+
+  <div class="mw8 center mt3">
+    <div class="flex flex-column flex-row-ns">
+      <div class="w-100 tracked-mega pb4 pb0-ns pr3-m pr5-l">
+        <div class="dt mb2 ph2">
+          <div class="dtc">
+            <h4 class="align-middle underline ma0 pr2 f4">Occupiers</h4>
+          </div>
+          <span class="h1 w1 dtc br-pill ba b--white bw2 bo bg-yellow align-middle"></span>
+        </div>
+        <ul class="list pl0">
+          {%for item in page.map%}
+          {%if item.type == "occupier"%}
+          <li class="db">
+            <a id="{{ item.title | slugify }}" class="dib link-map black link hover-bg-yellow pa2" href="javascript:void(0)">{{item.title}}</a>
+          </li>
+          {%endif%}
+          {%endfor%}
+        </ul>
+      </div>
+      <div class="w-100 tracked-mega pb4 pb0-ns pr3-m pr5-l">
+        <div class="dt mb2 ph2">
+          <div class="dtc">
+            <h4 class="align-middle underline ma0 pr2 f4">Food/Drink</h4>
+          </div>
+          <span class="h1 w1 dtc br-pill ba b--black bw2 bo bg-yellow align-middle"></span>
+        </div>
+        <ul class="list pl0">
+          {%for item in page.map%}
+          {%if item.type == "food-drink"%}
+          <li class="db">
+            <a id="{{ item.title | slugify }}" class="dib link-map black link hover-bg-yellow pa2" href="javascript:void(0)">{{item.title}}</a>
+          </li>
+          {%endif%}
+          {%endfor%}
+        </ul>
+      </div>
+      <div class="w-100 tracked-mega">
+        <div class="dt mb2 ph2">
+          <div class="dtc">
+            <h4 class="align-middle underline ma0 pr2 f4">Shopping</h4>
+          </div>
+          <span class="h1 w1 dtc br-pill ba b--gray bw2 bo bg-yellow align-middle"></span>
+        </div>
+        <ul class="list pl0">
+          {%for item in page.map%}
+          {%if item.type == "shopping"%}
+          <li class="db">
+            <a id="{{ item.title | slugify }}" class="dib link-map black link hover-bg-yellow pa2" href="javascript:void(0)">{{item.title}}</a>
+          </li>
+          {%endif%}
+          {%endfor%}
+        </ul>
+      </div>
+    </div><!-- /flex -->
+  </div><!-- /mw7 -->
+
+
+
 </div><!-- /bg-texture -->
 <div id="connections" class="bg-texture-white pv5">
   <div class="mw8 center ph3 ph0-l">
-    <h2 class="ttu f1 black tc">Connections</h2>
+    <h2 class="ttu f2 f1-ns black tc">Connections</h2>
 
     <div class="mt5 tracked-mega f6">
       {% for item in page.connections %}
@@ -107,8 +229,6 @@ connections:
           </div>
         </div>
       {% endfor %}
-
-
 
     </div>
 

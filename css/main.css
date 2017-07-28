@@ -6314,6 +6314,12 @@ code, .code {
      -moz-text-decoration-style: dashed;
           text-decoration-style: dashed; }
 
+.dashed-yellow {
+  text-decoration-color: #fecd31; }
+
+.dashed-white {
+  text-decoration-color: #fff; }
+
 @media screen and (min-width: 30em) {
   .strike-ns {
     text-decoration: line-through; }
@@ -7207,7 +7213,7 @@ code, .code {
   font-size: 0;
   line-height: 0;
   position: absolute;
-  top: 40%;
+  top: 45%;
   display: block;
   width: 100px;
   height: 100px;
@@ -7240,7 +7246,10 @@ code, .code {
   opacity: .25; }
 
 .slick-prev {
-  left: 15%; }
+  left: 7%; }
+  @media (min-width: 1310px) {
+    .slick-prev {
+      left: 13%; } }
 
 [dir='rtl'] .slick-prev {
   right: -25px;
@@ -7253,7 +7262,10 @@ code, .code {
   content: url("../images/slider-left.png"); }
 
 .slick-next {
-  right: 15%; }
+  right: 7%; }
+  @media (min-width: 1310px) {
+    .slick-next {
+      right: 13%; } }
 
 [dir='rtl'] .slick-next {
   right: auto;
@@ -7311,6 +7323,135 @@ code, .code {
 
 .slick-dots li.slick-active button {
   background: #c8c8c8; }
+
+.arrows-container {
+  display: none; }
+  @media (min-width: 1100px) {
+    .arrows-container {
+      display: block; } }
+
+/* START TOOLTIP STYLES */
+/* Applies to all tooltips */
+[tooltip]::before,
+[tooltip]::after {
+  text-transform: none;
+  /* opinion 2 */
+  font-size: .875rem;
+  /* opinion 3 */
+  line-height: 1;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  pointer-events: none;
+  position: absolute;
+  display: none;
+  opacity: 0; }
+
+[tooltip]::before {
+  content: '';
+  border: 10px solid transparent;
+  /* opinion 4 */
+  z-index: 1001;
+  /* absurdity 1 */ }
+
+[tooltip]::after {
+  content: attr(tooltip);
+  /* magic! */
+  /* most of the rest of this is opinion */
+  text-align: center;
+  /*
+    Let the content set the size of the tooltips
+    but this will also keep them from being obnoxious
+    */
+  min-width: 6em;
+  max-width: 21em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 2ch 2.5ch;
+  border-radius: 0;
+  background: #fff;
+  color: #000;
+  z-index: 1000;
+  /* absurdity 2 */ }
+
+/* Make the tooltips respond to hover */
+[tooltip]:hover::before,
+[tooltip]:hover::after,
+.tooltip-show::before,
+.tooltip-show::after {
+  display: block; }
+
+/* don't show empty tooltips */
+[tooltip='']::before,
+[tooltip='']::after {
+  display: none !important; }
+
+/* FLOW: UP */
+[tooltip]:not([flow])::before,
+[tooltip][flow^="up"]::before {
+  bottom: calc(100% + 10px);
+  border-bottom-width: 0;
+  border-top-color: #fff; }
+
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::after {
+  bottom: calc(100% + 20px); }
+
+[tooltip]:not([flow])::before,
+[tooltip]:not([flow])::after,
+[tooltip][flow^="up"]::before,
+[tooltip][flow^="up"]::after {
+  left: 50%;
+  -webkit-transform: translate(-50%, -0.5em);
+          transform: translate(-50%, -0.5em); }
+
+/* FLOW: DOWN */
+/* FLOW: LEFT */
+/* FLOW: RIGHT */
+/* KEYFRAMES */
+@-webkit-keyframes tooltips-vert {
+  to {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); } }
+@keyframes tooltips-vert {
+  to {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0); } }
+
+@-webkit-keyframes tooltips-horz {
+  to {
+    opacity: 1;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%); } }
+
+@keyframes tooltips-horz {
+  to {
+    opacity: 1;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%); } }
+
+/* FX All The Things */
+.tooltip-show::before,
+.tooltip-show::after,
+[tooltip]:not([flow]):hover::before,
+[tooltip]:not([flow]):hover::after,
+[tooltip][flow^="up"]:hover::before,
+[tooltip][flow^="up"]:hover::after,
+[tooltip][flow^="down"]:hover::before,
+[tooltip][flow^="down"]:hover::after {
+  -webkit-animation: tooltips-vert 300ms ease-out forwards;
+          animation: tooltips-vert 300ms ease-out forwards; }
+
+[tooltip][flow^="left"]:hover::before,
+[tooltip][flow^="left"]:hover::after,
+[tooltip][flow^="right"]:hover::before,
+[tooltip][flow^="right"]:hover::after {
+  -webkit-animation: tooltips-horz 300ms ease-out forwards;
+          animation: tooltips-horz 300ms ease-out forwards; }
 
 /*
 
@@ -7390,3 +7531,100 @@ progress[value] {
 .progress-icon-drive {
   top: 0;
   padding-right: -15em; }
+
+.map {
+  background-image: url("../images/map.png");
+  height: 1070px;
+  width: 1300px; }
+
+.marker-deloitte, .marker-ralph-lauren, .marker-cruise, .marker-hutchisons-bar-brasserie, .marker-sapporo-teppanyaki {
+  top: 627px; }
+
+.marker-deloitte {
+  right: 590px; }
+
+.marker-ralph-lauren {
+  right: 540px; }
+
+.marker-mulberry, .marker-ralph-lauren, .marker-anderson-strathearn {
+  right: 540px; }
+
+.marker-mulberry {
+  top: 660px; }
+
+.marker-anderson-strathearn {
+  top: 500px; }
+
+.marker-cruise {
+  right: 490px; }
+
+.marker-hutchisons-bar-brasserie {
+  right: 450px; }
+
+.marker-tesco-express, .marker-hm-revenue-customs, .marker-glasgow-city-marketing-bureau {
+  right: 405px; }
+
+.marker-tesco-express {
+  top: 625px; }
+
+.marker-hm-revenue-customs {
+  top: 595px; }
+
+.marker-glasgow-city-marketing-bureau, .marker-sainsbury-s-local {
+  top: 540px; }
+
+.marker-buchanan-galleries {
+  right: 630px;
+  top: 400px; }
+
+.marker-sainsbury-s-local {
+  right: 335px; }
+
+.marker-sapporo-teppanyaki {
+  right: 260px; }
+
+.marker-bacchus {
+  top: 660px;
+  right: 475px; }
+
+.marker-the-wilson-street-pantry, .marker-cafe-gandolfi {
+  top: 685px; }
+
+.marker-the-wilson-street-pantry {
+  right: 370px; }
+
+.marker-marks-spencer {
+  right: 505px;
+  top: 750px; }
+
+.marker-guys {
+  right: 340px;
+  top: 740px; }
+
+.marker-guys {
+  right: 340px;
+  top: 740px; }
+
+.marker-cafe-gandolfi {
+  right: 305px; }
+
+.marker-cafe-gandolfi, .marker-gandolfi-fish {
+  right: 305px; }
+
+.marker-gandolfi-fish, .marker-babbity-bowster {
+  top: 665px; }
+
+.marker-babbity-bowster {
+  right: 270px; }
+
+.marker-bridgestone-independent-investment-management {
+  right: 430px;
+  top: 500px; }
+
+.marker-university-of-strathclyde {
+  top: 560px;
+  right: 295px; }
+
+.marker-the-drum {
+  top: 790px;
+  right: 220px; }

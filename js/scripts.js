@@ -12,33 +12,25 @@ $(function() {
       {
         breakpoint: 1520,
         settings: {
+          centerMode: true,
           centerPadding: '200px',
-        }
-      },
-      {
-        breakpoint: 1340,
-        settings: {
-          centerPadding: '150px',
-        }
-      },
-      {
-        breakpoint: 1220,
-        settings: {
-          centerPadding: '100px',
+          slidesToShow: 1
         }
       },
       {
         breakpoint: 1100,
         settings: {
-          centerMode: false,
-          centerPadding: '0',
+          centerMode: true,
+          centerPadding: '100px',
+          slidesToShow: 1
         }
       },
       {
-        breakpoint: 480,
+        breakpoint: 500,
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 1
         }
       }
       // You can unslick at a given breakpoint now by adding:
@@ -67,4 +59,11 @@ $(function() {
       $(tabgroup).children('div').hide();
       $(target).show();
   });
+
+  $('.link-map').hover(function(){
+    var id = $(this).attr('id');
+
+    $('#'+id+'-tooltip').toggleClass('tooltip-show');
+  });
+
 });

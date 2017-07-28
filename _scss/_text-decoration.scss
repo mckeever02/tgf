@@ -22,6 +22,8 @@
 .underline    { text-decoration: underline; }
 .no-underline { text-decoration: none; }
 .dashed { text-decoration-style: dashed;}
+.dashed-yellow {text-decoration-color: $yellow}
+.dashed-white {text-decoration-color: $white}
 
 @media #{$breakpoint-not-small} {
   .strike-ns       { text-decoration: line-through; }

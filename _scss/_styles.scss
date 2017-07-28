@@ -107,3 +107,139 @@ progress[value] {
   top: 0;
   padding-right: -15em;
 }
+
+#local-area {
+
+}
+
+.map {
+  background-image: url('../images/map.png');
+  height: 1070px;
+  width: 1300px;
+}
+
+.marker {
+  // height: .5em;
+  // width: .5em;
+  // border-width: 2px;
+}
+
+.marker-deloitte, .marker-ralph-lauren, .marker-cruise, .marker-hutchisons-bar-brasserie, .marker-sapporo-teppanyaki {
+  top: 627px;
+}
+
+.marker-deloitte {
+  right: 590px;
+}
+
+.marker-ralph-lauren {
+  right: 540px;
+}
+
+.marker-mulberry, .marker-ralph-lauren, .marker-anderson-strathearn {
+  right: 540px;
+}
+
+.marker-mulberry {
+  top: 660px;
+}
+
+.marker-anderson-strathearn {
+  top: 500px;
+}
+
+.marker-cruise {
+  right: 490px;
+}
+
+.marker-hutchisons-bar-brasserie {
+  right: 450px;
+}
+
+.marker-tesco-express, .marker-hm-revenue-customs, .marker-glasgow-city-marketing-bureau {
+  right: 405px;
+}
+
+.marker-tesco-express {
+  top: 625px;
+}
+
+.marker-hm-revenue-customs {
+  top: 595px;
+}
+
+.marker-glasgow-city-marketing-bureau, .marker-sainsbury-s-local {
+  top: 540px;
+}
+
+.marker-buchanan-galleries {
+  right: 630px;
+  top: 400px;
+}
+
+.marker-sainsbury-s-local {
+  right: 335px;
+}
+
+.marker-sapporo-teppanyaki {
+  right: 260px;
+}
+
+.marker-bacchus {
+  top: 660px;
+  right: 475px;
+}
+
+.marker-the-wilson-street-pantry, .marker-cafe-gandolfi {
+  top: 685px;
+}
+
+.marker-the-wilson-street-pantry {
+  right: 370px;
+}
+
+.marker-marks-spencer {
+  right: 505px;
+  top: 750px;
+}
+
+.marker-guys {
+  right: 340px;
+  top: 740px;
+}
+
+.marker-guys {
+  right: 340px;
+  top: 740px;
+}
+
+.marker-cafe-gandolfi {
+  right: 305px;
+}
+
+.marker-cafe-gandolfi, .marker-gandolfi-fish {
+  right: 305px;
+}
+
+.marker-gandolfi-fish, .marker-babbity-bowster {
+  top: 665px;
+}
+
+.marker-babbity-bowster {
+  right: 270px;
+}
+
+.marker-bridgestone-independent-investment-management {
+  right: 430px;
+  top: 500px;
+}
+
+.marker-university-of-strathclyde {
+  top: 560px;
+  right: 295px;
+}
+
+.marker-the-drum {
+  top: 790px;
+  right: 220px;
+}

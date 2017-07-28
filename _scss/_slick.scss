@@ -141,7 +141,7 @@
     line-height: 0;
 
     position: absolute;
-    top: 40%;
+    top: 45%;
 
     display: block;
 
@@ -184,7 +184,10 @@
 
 .slick-prev
 {
-    left: 15%;
+  left: 7%;
+  @media (min-width: 1310px ) {
+	left: 13%;
+  }
 }
 [dir='rtl'] .slick-prev
 {
@@ -203,7 +206,10 @@
 
 .slick-next
 {
-    right: 15%;
+  right: 7%;
+  @media (min-width: 1310px ) {
+	right: 13%;
+  }
 }
 [dir='rtl'] .slick-next
 {
@@ -285,4 +291,10 @@
 .slick-dots li.slick-active button
 {
     background: $gray;
+}
+.arrows-container {
+  display: none;
+  @media (min-width: 1100px ) {
+	  display: block;
+  }
 }
