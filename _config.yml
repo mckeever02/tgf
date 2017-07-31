@@ -1,7 +1,8 @@
 name: The Garment Factory
 markdown: redcarpet
-highlighter: pygments # or rouge or null
+highlighter: rouge # or rouge or null
 exclude: ["node_modules", "gulpfile.js", "package.json"]
+tagline: "Where Ideas Are Made"
 
 # Navigation
 navigation:
@@ -30,3 +31,6 @@ downloads:
     link: floor-plans.pdf
   - title: Space Plans
     link: space-plans.pdf
+
+gems:
+  - jekyll-sitemap

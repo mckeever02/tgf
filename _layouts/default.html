@@ -2,12 +2,36 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>{{ page.title }}</title>
+        <title>{%if page.class == "index" %} {{ page.title }} {%else%} {{ page.title }} &bull; {{site.name}} {%endif%}</title>
+        <meta name="description" content="{{page.description}}">
         <meta name="viewport" content="width=device-width">
 
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/main.css">
+
+        <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+        <meta name="theme-color" content="#ffffff">
+
+
+        <!-- Disable tap highlight on IE -->
+        <meta name="msapplication-tap-highlight" content="no">
+
+        <!-- Open Graph Metadata -->
+        <meta property="og:url" content="{{site.website}}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="{%if page.title%} {{page.title}} {%else%} {{site.name}} {%endif%}" />
+        <meta property="og:description" content="{%if page.description%} {{page.description}} {%else%} {{site.tagline}} {%endif%}" />
+        <meta property="og:image" content="{{site.website}}{{site.imageurl}}/card-image.png" />
+
+        <!-- Twitter Card Metadata -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="{{site.social.twitter.username | prepend: "@" }}" />
+        <meta name="twitter:title" content="{%if page.title%} {{page.title}} {%else%} {{site.name}} {%endif%}" />
+        <meta name="twitter:description" content="A new wave of office and retail space in Cathedral Quarter">
+        <meta name="twitter:image" content="{{site.website}}{{site.imageurl}}/card-image.png" />
 
     </head>
     <body>
