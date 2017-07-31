@@ -3,6 +3,9 @@ name: The Garment Factory
 # highlighter: rouge # or rouge or null
 exclude: ["node_modules", "gulpfile.js", "package.json"]
 tagline: "Where Ideas Are Made"
+description: "Office and retail space in Glasgow's Merchant City"
+
+website: http://thegarmentfactory.com
 
 # Navigation
 navigation:
