@@ -1,2 +1,2 @@
 gem 'jekyll-sitemap'
-gem 'redcarpet'
+#gem 'redcarpet'
