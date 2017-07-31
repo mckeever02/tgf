@@ -52,7 +52,7 @@ downloads:
 
 <div class="bg-texture-moon-gray">
   <div class="mw8 center ph3 ph0-l">
-    <div class="bg-white w-50-l pa4 nt5 relative z-2">
+    <div class="bg-white w-50-l pa4 nt4 nt5-ns relative z-2">
       <p class="lh-copy ma0 tracked">The Garment Factory combines many of the original features, including exposed ceilings, steel and brickwork, wooden flooring and ornate staircases as well as the introduction of contemporary finishes, creating a 21st century workplace.</p>
     </div>
   </div>
@@ -61,7 +61,7 @@ downloads:
 
   <div id="accommodation" class="bg-texture-white pv5">
     <div class="mw7 center ph3 ph0-l">
-      <h2 class="black ttu f1">Accommodation</h2>
+      <h2 class="black ttu f3 f1-ns">Accommodation</h2>
 
       <div class="overflow-auto">
         <table class="w-100 center tracked" cellspacing="0">
@@ -89,47 +89,38 @@ downloads:
         </table>
       </div>
 
-      <div id="plans" class="flex flex-column flex-row-ns justify-between-ns mt5 pv5">
-        <div class="w-30-ns mr4-ns">
-          <h2 class="black ttu f1 mt0">Plans</h2>
+      <div id="plans" class="flex flex-column flex-row-ns justify-between-ns mt5-ns pv5">
+        <div class="w-100 w-30-ns mr4-ns">
+          <h2 class="black ttu f3 f1-ns mt0">Plans</h2>
 
-          <ul class="list tracked pl0 tabs" data-tabgroup="floor-tabs">
-            {% assign count = 6 %}
-            {%for row in page.floor_area%}
-            <li>
-              <a class="dib {% if count == 6 %} tab-active {%endif%} link underline black hover-bg-yellow pv2 ph3 tc" href="#floor{{count}}">{{row.floor}} Floor</a>
-            </li>
-            {% assign count = count | minus: 1 %}
-            {%endfor%}
-          </ul>
+          {%include floor_area_nav.html%}
 
-          <div class="mt5">
+          <div class="mt5-ns">
 
-
-            <div class="tracked-mega mt5 ph3">
-              <div class="flex align-items-center pv1">
-                <span class=" h1 w1 dib br-pill ba b--black bg-yellow align-middle "></span>
-                <span class="dib ml2 align-middle">Office</span>
+            <div class="tracked-mega mt4 mt5-ns mb3 mb0-ns ph3 flex flex-row justify-between flex-column-ns">
+              <div class="flex align-items-center pv1 ph1 ph0-ns">
+                <span class=" h1 w1 dib br-pill ba b--black bg-yellow v-mid "></span>
+                <span class="dib ml2 v-mid">Office</span>
               </div>
-              <div class="flex align-items-center pv1">
-                <span class=" h1 w1 dib br-pill ba b--black bg-orange align-middle"></span>
-                <span class="dib ml2 align-middle">Retail</span>
+              <div class="flex align-items-center pv1 ph1 ph0-ns">
+                <span class=" h1 w1 dib br-pill ba b--black bg-orange v-mid"></span>
+                <span class="dib ml2 v-mid">Retail</span>
               </div>
-              <div class="flex align-items-center pv1">
-                <span class=" h1 w1 dib br-pill ba b--black bg-light-gray align-middle"></span>
-                <span class="dib ml2 align-middle">Core</span>
+              <div class="flex align-items-center pv1 ph1 ph0-ns">
+                <span class=" h1 w1 dib br-pill ba b--black bg-light-gray v-mid"></span>
+                <span class="dib ml2 v-mid">Core</span>
               </div>
             </div>
 
           </div>
 
         </div>
-        <div id="floor-tabs" class="tabgroup w-100">
+        <div id="floor-tabs" class="tabgroup w-100 w-70-ns">
           {% assign count = 6 %}
           {%for row in page.floor_area%}
-            <div id="floor{{count}}" class="flex flex-row-reverse">
-              <div class="db">
-                <div class="ba b--black ph3 pv2 tracked-mega w-100">
+            <div id="floor{{count}}" class="flex flex-column flex-row-reverse-ns">
+              <div class="db mb3 mb0-ns">
+                <div class="ba b--black ph3 pv2 tracked-mega w-100 tc tl-ns">
                   <span class="db lh-copy">{{row.foot}} sq ft</span>
                   <span class="db lh-copy">{{row.metres}} sq m</span>
                 </div>
@@ -148,7 +139,7 @@ downloads:
 
   <div id="specification" class="bg-texture-mid-gray pv5 white">
     <div class="mw7 center ph3 ph0-l">
-      <h2 class="ttu f1 mt0">Specification</h2>
+      <h2 class="ttu f3 f1-ns mt0">Specification</h2>
 
       <ul class="pl0 tracked-mega list list-dashed list-yellow">
         <li class="pv2">New contemporary double height entrance</li>

@@ -13,7 +13,7 @@
     <body>
       <nav class="bg-black">
         <div class="mw8 center ph3 ph0-l db flex-l items-center w-100 border-box pv3">
-          <a class="db tc tl-l mid-gray link dim mb2 mb0-l mx-auto mr-auto" href="/" title="Home">
+          <a class="db tc tl-l mid-gray link dim mb3 mb0-l mx-auto mr-auto" href="/" title="Home">
             <img src="/images/tgf-logo.png" class="db dib-l v-mid tc tl-l center" alt="{{site.name}} logo">
             <h1 class="ttu white dib f4 ma0 ml2-l  relative mt3 lh-solid">The Garment Factory</h1>
           </a>
@@ -23,7 +23,7 @@
               {% if page.url contains item.url %}
                   {% assign class = 'active' %}
               {% endif %}
-              <a class="{{class}} link dim white f6 f5-l dib ml3 ml5-l" href="{{ item.url }}" title="{{ item.title }}">{{ item.title }}</a>
+              <a class="{{class}} link dim white f4 f5-l dib ml3 ml5-l" href="{{ item.url }}" title="{{ item.title }}">{{ item.title }}</a>
               </a>
             {% endfor %}
           </div>
@@ -35,7 +35,7 @@
             <ul class="list pa0 ma0 tracked-mega nowrap overflow-x-auto">
               <li class="dib">
                 {% for nav_item in page.sub_nav %}
-                <a class="dib f6 link pv2 pl3 tc black hover-white" href="#{{nav_item | stringify | downcase | strip }}">
+                <a class="dib f5 f6-ns link pv2 pl3 tc black hover-white" href="#{{nav_item | stringify | downcase | strip }}">
                   {{nav_item}}
                 </a>
                 {% endfor %}
@@ -48,7 +48,7 @@
 
       {{ content }}
 
-      <footer class="pv4 bg-texture-black white tracked-mega">
+      <footer class="pv3 pv4-ns bg-texture-black white tracked-mega">
         <div class="mw8 ph3 ph0-ns center">
           <div class="flex flex-column flex-row-ns justify-between-ns mt4 items-center-ns">
             <div class="w-100 w-50-ns pr3-m pr5-l">

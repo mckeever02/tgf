@@ -19,9 +19,9 @@ navigation:
 
 permalink: pretty
 
-button_classes: fl bg-black white f4 pa3 underline dashed dashed-yellow hover-bg-dark-gray link tracked-mega tc
+button_classes: fl bg-black white f5 f4-ns pa3 underline dashed dashed-yellow hover-bg-dark-gray link tracked-mega tc
 
-yellow_button_classes: fl bg-yellow black mt3 f4 pa3 underline dashed dashed-white link hover-bg-gold tracked-mega
+yellow_button_classes: fl bg-yellow black mt3 f5 f4-ns pa3 underline dashed dashed-white link hover-bg-gold tracked-mega
 
 downloads:
   - title: Office Brochure

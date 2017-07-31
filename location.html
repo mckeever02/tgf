@@ -98,14 +98,14 @@ map:
 
 <div class="bg-texture-moon-gray">
   <div class="mw8 center ph3 ph0-l">
-    <div class="bg-white w-50-l pa4 nt5 relative z-2">
+    <div class="bg-white w-50-l pa4 nt4 nt5-ns relative z-2">
       <p class="lh-copy ma0 tracked">The Garment Factory is located in the heart of the vibrant Merchant City and only a 2 minute walk from Merchant Square, a well known food, drink and nightlife destination.</p>
     </div>
 
 
-    <div class="mt5">
+    <div class="mt3 mt5-ns">
       <div class="flex flex-column flex-row-l">
-        <div class="w-100 pr5-ns">
+        <div class="w-100 w-50-ns pr5-ns">
           <h2 class="ttu f1 black">Merchant<br> City</h2>
 
           <div class="measure-narrow-l measure-m tracked-mega lh-copy">
@@ -115,7 +115,7 @@ map:
           </div>
 
         </div>
-        <div class="w-100 pt3 pt5-ns tc tl-l">
+        <div class="w-100 w-50-ns pt3 pt5-ns tc tl-l">
           <img class="nb5-l z-2 relative" src="/images/merchant-sq-1.jpg" alt="Image of Merchant Square">
           <img class="nl5-l" src="/images/merchant-sq-2.jpg" alt="Image of Merchant Square">
         </div>
@@ -139,7 +139,7 @@ map:
           {% else %}
             {% assign borderColor = 'b--gray' %}
           {%endif%}
-          <span id="{{ item.title | slugify | append: "-tooltip" }}" tooltip="{{item.title}}" title="{{item.title}}" class="marker absolute z-2 {{item.title | slugify | prepend: "marker-"}} bw2 h1 w1 dtc br-pill ba {{borderColor}} bg-yellow"></span>
+          <span id="{{ item.title | slugify | append: "-tooltip" }}" tooltip="{{item.title}}" title="{{item.title}}" class="marker absolute {{item.title | slugify | prepend: "marker-"}} bw2 h1 w1 dtc br-pill ba {{borderColor}} bg-yellow"></span>
         {%endfor%}
       </div>
 
@@ -147,12 +147,12 @@ map:
 
   <div class="mw8 center mt3">
     <div class="flex flex-column flex-row-ns">
-      <div class="w-100 tracked-mega pb4 pb0-ns pr3-m pr5-l">
+      <div class="w-100 w-33-ns tracked-mega pb4 pb0-ns pr3-m pr5-l">
         <div class="dt mb2 ph2">
           <div class="dtc">
-            <h4 class="align-middle underline ma0 pr2 f4">Occupiers</h4>
+            <h4 class="v-mid underline ma0 pr2 f4">Occupiers</h4>
           </div>
-          <span class="h1 w1 dtc br-pill ba b--white bw2 bo bg-yellow align-middle"></span>
+          <span class="h1 w1 dtc br-pill ba b--white bw2 bo bg-yellow v-mid"></span>
         </div>
         <ul class="list pl0">
           {%for item in page.map%}
@@ -164,12 +164,12 @@ map:
           {%endfor%}
         </ul>
       </div>
-      <div class="w-100 tracked-mega pb4 pb0-ns pr3-m pr5-l">
+      <div class="w-100 w-33-ns tracked-mega pb4 pb0-ns pr3-m pr5-l">
         <div class="dt mb2 ph2">
           <div class="dtc">
-            <h4 class="align-middle underline ma0 pr2 f4">Food/Drink</h4>
+            <h4 class="v-mid underline ma0 pr2 f4">Food/Drink</h4>
           </div>
-          <span class="h1 w1 dtc br-pill ba b--black bw2 bo bg-yellow align-middle"></span>
+          <span class="h1 w1 dtc br-pill ba b--black bw2 bo bg-yellow v-mid"></span>
         </div>
         <ul class="list pl0">
           {%for item in page.map%}
@@ -181,12 +181,12 @@ map:
           {%endfor%}
         </ul>
       </div>
-      <div class="w-100 tracked-mega">
+      <div class="w-100 w-33-ns tracked-mega">
         <div class="dt mb2 ph2">
           <div class="dtc">
-            <h4 class="align-middle underline ma0 pr2 f4">Shopping</h4>
+            <h4 class="v-mid underline ma0 pr2 f4">Shopping</h4>
           </div>
-          <span class="h1 w1 dtc br-pill ba b--gray bw2 bo bg-yellow align-middle"></span>
+          <span class="h1 w1 dtc br-pill ba b--gray bw2 bo bg-yellow v-mid"></span>
         </div>
         <ul class="list pl0">
           {%for item in page.map%}
@@ -204,11 +204,11 @@ map:
 
 
 </div><!-- /bg-texture -->
-<div id="connections" class="bg-texture-white pv5">
+<div id="connections" class="bg-texture-white pv3 pv5-ns">
   <div class="mw8 center ph3 ph0-l">
     <h2 class="ttu f2 f1-ns black tc">Connections</h2>
 
-    <div class="mt5 tracked-mega f6">
+    <div class="mt3 mt5-ns tracked-mega f6">
       {% for item in page.connections %}
       {% assign total_time = 18.0 %}
         <div class="flex flex-row w-100 items-center">

@@ -6502,7 +6502,7 @@ code, .code {
   font-size: 2.25rem; }
 
 .f3 {
-  font-size: 1.5rem; }
+  font-size: 2rem; }
 
 .f4 {
   font-size: 1.25rem; }
@@ -7388,6 +7388,9 @@ code, .code {
 [tooltip='']::after {
   display: none !important; }
 
+[tooltip]:hover {
+  z-index: 9999; }
+
 /* FLOW: UP */
 [tooltip]:not([flow])::before,
 [tooltip][flow^="up"]::before {
@@ -7518,11 +7521,16 @@ img {
 progress[value] {
   -webkit-appearance: none;
   appearance: none;
-  background-color: #c8c8c8; }
+  background-color: #c8c8c8;
+  border: none;
+  color: #fecd31; }
   progress[value]::-webkit-progress-bar {
     background-color: #e9e6e3; }
   progress[value]::-webkit-progress-value {
     background-color: #fecd31; }
+
+progress::-moz-progress-bar {
+  background-color: #fecd31; }
 
 .progress-icon {
   top: .5em;

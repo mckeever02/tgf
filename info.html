@@ -23,13 +23,13 @@ downloads:
 
 <div class="bg-texture-yellow">
   <div class="mw8 center ph3 ph0-l">
-    <div class="bg-white w-50-l pa4 nt5 relative z-2">
+    <div class="bg-white w-50-l pa4 nt4 nt5-ns relative z-2">
       <p class="lh-copy ma0 tracked">The brochures and plans are available to download using the links below. If you would like more information or would like to arrange a viewing, please use one of the contacts listed at the bottom of the page.</p>
     </div>
 
 
     <div class="mt5">
-      <h2 class="ttu f1 black">Downloads</h2>
+      <h2 class="ttu f3 f1-ns black">Downloads</h2>
 
       <h3 class="f5 underline tracked-mega mb3">Office</h3>
       <div class="flex flex-column flex-row-ns">
@@ -40,7 +40,7 @@ downloads:
 
       <h3 class="f5 underline tracked-mega mb3">Retail</h3>
       <div class="flex flex-column flex-row-ns">
-        {%for download in page.downloads.office %}
+        {%for download in page.downloads.retail %}
           <a class="{{site.button_classes}} mb4 mr4-ns" href="{{download.link}}" title="CLick to download {{download.title}}">{{download.title}}</a>
         {%endfor%}
       </div>

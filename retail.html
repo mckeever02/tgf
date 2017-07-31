@@ -56,7 +56,7 @@ downloads:
 
 <div class="bg-texture-moon-gray">
   <div class="mw8 center ph3 ph0-l">
-    <div class="bg-white w-50-l pa4 nt5 relative z-2">
+    <div class="bg-white w-50-l pa4 nt4 nt5-ns relative z-2">
       <p class="lh-copy ma0 tracked">The Garment Factory combines many of the original features, including exposed ceilings, steel and brickwork, wooden flooring and ornate staircases as well as the introduction of contemporary finishes, creating a 21st century workplace.</p>
     </div>
   </div>
@@ -78,7 +78,7 @@ downloads:
 
   <div id="accommodation" class="bg-texture-white pv5">
     <div class="mw7 center ph3 ph0-l">
-      <h2 class="black ttu f1">Accommodation</h2>
+      <h2 class="black ttu f3 f1-ns">Accommodation</h2>
 
       <div class="tracked-mega">
         <p class="lh-copy">2 unique restaurant/bar opportunities on the lower levels with offices above extending to circa 3,534 sq m (38,040 sq ft) over the upper 5 levels.</p>
@@ -141,32 +141,26 @@ downloads:
         <p>The floor areas stated above are approximate gross internal areas only</p>
       </div>
 
-      <div id="plans" class="flex flex-column flex-row-ns justify-between-ns mt5 pv5">
-        <div class="w-30-ns mr4-ns">
-          <h2 class="black ttu f1 mt0">Plans</h2>
+      <div id="plans" class="flex flex-column flex-row-ns justify-between-ns mt5-ns pv5">
+        <div class="w-100 w-30-ns mr4-ns">
+          <h2 class="black ttu f3 f1-ns mt0">Plans</h2>
 
-          <ul class="list tracked pl0 tabs" data-tabgroup="floor-tabs">
-            {% assign count = 6 %}
-            {%for row in page.floor_area%}
-            <li>
-              <a class="dib {% if count == 6 %} tab-active {%endif%} link underline black hover-bg-yellow pv2 ph3 tc" href="#floor{{count}}">{{row.floor}}</a>
-            </li>
-            {% assign count = count | minus: 1 %}
-            {%endfor%}
-          </ul>
+          {%include floor_area_nav.html%}
 
         </div>
-        <div id="floor-tabs" class="tabgroup w-100">
+        <div id="floor-tabs" class="tabgroup w-100 w-70-ns">
           {% assign count = 6 %}
           {%for row in page.floor_area%}
             <div id="floor{{count}}" class="flex flex-column flex-row-reverse-ns">
-              <div class="db">
+              <div class="db mb3 mb0-ns">
                 <div class="ba b--black ph3 pv3 tracked-mega w-100">
                   <div class="db mb3">
                     <div class="dt mb2">
-                      <span class="h1 w1 dtc br-pill ba b--black bg-yellow align-middle"></span>
+                      <div class="dtc v-mid">
+                        <span class="h1 w1 br-pill ba b--black bg-yellow db"></span>
+                      </div>
                       <div class="dtc">
-                        <span class="align-middle underline pl3">Unit 1</span>
+                        <span class="v-mid underline pl3">Unit 1</span>
                       </div>
                     </div>
                     <div class="pl4">
@@ -177,9 +171,9 @@ downloads:
                   {%if row.unit_2 %}
                   <div class="db">
                     <div class="dt mb2">
-                      <span class="h1 w1 dtc br-pill ba b--black bg-orange align-middle"></span>
+                      <span class="h1 w1 dtc br-pill ba b--black bg-orange v-mid"></span>
                       <div class="dtc">
-                        <span class="align-middle underline pl3">Unit 2</span>
+                        <span class="v-mid underline pl3">Unit 2</span>
                       </div>
                     </div>
                     <div class="pl4">
@@ -204,10 +198,13 @@ downloads:
 
   <div id="downloads" class="bg-texture-yellow pv5 black">
     <div class="mw7 center ph3 ph0-l">
-      <h2 class="ttu f1 mt0">Downloads</h2>
-      {%for download in page.downloads%}
-          <a class="{{site.button_classes}} mr4-ns" href="{{download.link}}">{{download.title}}</a>
-      {%endfor%}
+      <h2 class="ttu f3 f1-ns mt0">Downloads</h2>
+      <div class="cf">
+        {%for download in page.downloads%}
+            <a class="{{site.button_classes}} mb3 mb0-ns mr4-ns fl" href="{{download.link}}">{{download.title}}</a>
+        {%endfor%}
+      </div>
+
 
     </div>
   </div>
