@@ -65,7 +65,7 @@ gulp.task('uncss', function() {
     .pipe(cleanCSS())
     .pipe(uncss({
       html: ['*.html', '_includes/*.html','_layouts/*.html'],
-      ignore: [/\.active/, /\.nav-link.active/, /\.nav-link/, /\.tab-active/]
+      ignore: [/\.active/, /\.nav-link.active/, /\.nav-link/, /\.tab-active/, /\.bg-header-.*/, /\.slick-.*/, /\.dashed/, /\.dashed-.*/, /\.hover-bg-dark-gray/, /\.hover-bg-gold/, /\.f4-ns/, /\.marker-.*/, /\[tooltip]/, /\[tooltip]-.*/, /\[tooltip].*/, /\[tooltip]::*/, /\[tooltip]:*/, /\.tooltip-.*/]
     }))
     .pipe(browserSync.reload({stream:true}))
     .pipe(gulp.dest('css'));
