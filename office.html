@@ -37,13 +37,6 @@ floor_area:
     foot: "5,586"
     metres: 519
 
-downloads:
-  - title: Office Brochure
-    link: office-brochure.pdf
-  - title: Floor Plans
-    link: floor-plans.pdf
-  - title: Space Plans
-    link: space-plans.pdf
 ---
 
 
@@ -60,7 +53,7 @@ downloads:
 
   <div id="accommodation" class="bg-texture-white pv5">
     <div class="mw7 center ph3 ph0-l">
-      <h2 class="black ttu f3 f1-ns">Accommodation</h2>
+      <h2 class="heading black ttu f3 f1-ns normal">Accommodation</h2>
 
       <div class="overflow-auto">
         <table class="w-100 center tracked" cellspacing="0">
@@ -90,7 +83,7 @@ downloads:
 
       <div id="plans" class="flex flex-column flex-row-ns justify-between-ns mt5-ns pv5">
         <div class="w-100 w-30-ns mr4-ns">
-          <h2 class="black ttu f3 f1-ns mt0">Plans</h2>
+          <h2 class="heading black ttu f3 f1-ns mt0 normal">Plans</h2>
 
           {%include floor_area_nav.html%}
 
@@ -138,9 +131,9 @@ downloads:
 
   <div id="specification" class="bg-texture-mid-gray pv5 white">
     <div class="mw7 center ph3 ph0-l">
-      <h2 class="ttu f3 f1-ns mt0">Specification</h2>
+      <h2 class="heading ttu f3 f1-ns mt0 normal">Specification</h2>
 
-      <ul class="pl0 tracked-mega list list-dashed list-yellow">
+      <ul class="pl0 tracked list list-dashed list-yellow">
         <li class="pv2">New contemporary double height entrance</li>
         <li class="pv2">Manned reception</li>
         <li class="pv2">Touch down space, coffee station and informal waiting area</li>
@@ -158,12 +151,12 @@ downloads:
 
   <div id="downloads" class="bg-texture-yellow pv5 black">
     <div class="mw7 center ph3 ph0-l">
-      <h2 class="ttu f1 mt0">Downloads</h2>
+      <h2 class="heading ttu f1 mt0 normal">Downloads</h2>
 
       <ul class="list pl0">
-      {%for download in page.downloads%}
+      {%for download in site.downloads%}
         <li class="db pv4">
-          <a class="{{site.button_classes}}" href="{{download.link}}">{{download.title}}</a>
+          <a class="{{site.button_classes}}" href="/downloads/{{download.link}}">{{download.title}}</a>
         </li>
       {%endfor%}
       </ul>

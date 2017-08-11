@@ -79,9 +79,9 @@ downloads:
 
   <div id="accommodation" class="bg-texture-white pv5">
     <div class="mw7 center ph3 ph0-l">
-      <h2 class="black ttu f3 f1-ns">Accommodation</h2>
+      <h2 class="heading black ttu f3 f1-ns">Accommodation</h2>
 
-      <div class="tracked-mega">
+      <div class="tracked">
         <p class="lh-copy">2 unique restaurant/bar opportunities on the lower levels with offices above extending to circa 3,534 sq m (38,040 sq ft) over the upper 5 levels.</p>
 
         <ul class="list pl0 list-dashed">
@@ -144,7 +144,7 @@ downloads:
 
       <div id="plans" class="flex flex-column flex-row-ns justify-between-ns mt5-ns pv5">
         <div class="w-100 w-30-ns mr4-ns">
-          <h2 class="black ttu f3 f1-ns mt0">Plans</h2>
+          <h2 class="heading black ttu f3 f1-ns mt0">Plans</h2>
 
           {%include floor_area_nav.html%}
 
@@ -199,9 +199,9 @@ downloads:
 
   <div id="downloads" class="bg-texture-yellow pv5 black">
     <div class="mw7 center ph3 ph0-l">
-      <h2 class="ttu f3 f1-ns mt0">Downloads</h2>
+      <h2 class="ttu heading f3 f1-ns mt0">Downloads</h2>
       <div class="cf">
-        {%for download in page.downloads%}
+        {%for download in site.downloads%}
             <a class="{{site.button_classes}} mb3 mb0-ns mr4-ns fl" href="{{download.link}}">{{download.title}}</a>
         {%endfor%}
       </div>

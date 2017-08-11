@@ -105,9 +105,9 @@ map:
     <div class="mt3 mt5-ns">
       <div class="flex flex-column flex-row-l">
         <div class="w-100 w-50-ns pr5-ns">
-          <h2 class="ttu f1 black">Merchant<br> City</h2>
+          <h2 class="heading ttu f1 black">Merchant<br> City</h2>
 
-          <div class="measure-narrow-l measure-m tracked-mega lh-copy">
+          <div class="measure-narrow-l measure-m tracked lh-copy">
             <p>Merchant City is just minutes away from George Square and the Style Mile shopping district.It is one of Glasgow’s most vibrant areas brimming with art, culture, and fashion and complete with fabulous places to eat and drink. It hosts a number of nationally recognised restaurant names alongside eclectic independent bars, galleries and quirky little shops to explore.</p>
 
             <p>Also just moments away sits Merchant Square – a stylish hub of independent bars and restaurants all under one roof.</p>
@@ -146,10 +146,10 @@ map:
 
   <div class="mw8 center mt3">
     <div class="flex flex-column flex-row-ns">
-      <div class="w-100 w-33-ns tracked-mega pb4 pb0-ns pr3-m pr5-l">
+      <div class="w-100 w-33-ns tracked pb4 pb0-ns pr3-m pr5-l">
         <div class="dt mb2 ph2">
           <div class="dtc">
-            <h4 class="v-mid underline ma0 pr2 f4">Occupiers</h4>
+            <h4 class="v-mid normal underline ma0 pr2 f4">Occupiers</h4>
           </div>
           <span class="h1 w1 dtc br-pill ba b--white bw2 bo bg-yellow v-mid"></span>
         </div>
@@ -163,10 +163,10 @@ map:
           {%endfor%}
         </ul>
       </div>
-      <div class="w-100 w-33-ns tracked-mega pb4 pb0-ns pr3-m pr5-l">
+      <div class="w-100 w-33-ns tracked pb4 pb0-ns pr3-m pr5-l">
         <div class="dt mb2 ph2">
           <div class="dtc">
-            <h4 class="v-mid underline ma0 pr2 f4">Food/Drink</h4>
+            <h4 class="v-mid normal underline ma0 pr2 f4">Food/Drink</h4>
           </div>
           <span class="h1 w1 dtc br-pill ba b--black bw2 bo bg-yellow v-mid"></span>
         </div>
@@ -180,10 +180,10 @@ map:
           {%endfor%}
         </ul>
       </div>
-      <div class="w-100 w-33-ns tracked-mega">
+      <div class="w-100 w-33-ns tracked">
         <div class="dt mb2 ph2">
           <div class="dtc">
-            <h4 class="v-mid underline ma0 pr2 f4">Shopping</h4>
+            <h4 class="v-mid normal underline ma0 pr2 f4">Shopping</h4>
           </div>
           <span class="h1 w1 dtc br-pill ba b--gray bw2 bo bg-yellow v-mid"></span>
         </div>
@@ -205,9 +205,9 @@ map:
 </div><!-- /bg-texture -->
 <div id="connections" class="bg-texture-white pv3 pv5-ns">
   <div class="mw8 center ph3 ph0-l">
-    <h2 class="ttu f2 f1-ns black tc">Connections</h2>
+    <h2 class="heading ttu f2 f1-ns black tc">Connections</h2>
 
-    <div class="mt3 mt5-ns tracked-mega f6">
+    <div class="mt3 mt5-ns tracked f6">
       {% for item in page.connections %}
       {% assign total_time = 18.0 %}
         <div class="flex flex-row w-100 items-center">
@@ -222,7 +222,7 @@ map:
             {%endif%}
             <progress class="w-100 progress" max="{{total_time}}" value="{{item.time}}"></progress>
           </div>
-          <div class="w-10 tc mt3">
+          <div class="w-10 tc mt3 heading">
             <span class="db f2">{{item.time | round}}</span>
             <small class="db ttu">mins</small>
           </div>

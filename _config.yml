@@ -7,6 +7,8 @@ description: "Office and retail space in Glasgow's Merchant City"
 
 website: http://thegarmentfactory.com
 
+email: rpittaway@castleforgepartners.com
+
 # Navigation
 navigation:
   - title: Office
@@ -23,17 +25,19 @@ navigation:
 
 permalink: pretty
 
-button_classes: fl bg-black white f5 f4-ns pa3 underline dashed dashed-yellow hover-bg-dark-gray link tracked-mega tc
+button_classes: fl bg-black white f5 f4-ns pa3 underline dashed dashed-yellow hover-bg-dark-gray link tracked tc
 
-yellow_button_classes: fl bg-yellow black mt3 f5 f4-ns pa3 underline dashed dashed-white link hover-bg-gold tracked-mega
+yellow_button_classes: fl bg-yellow black mt3 f5 f4-ns pa3 underline dashed dashed-white link hover-bg-gold tracked
+
+brochure: TGF-Office-Brochure.pdf
 
 downloads:
   - title: Office Brochure
-    link: office-brochure.pdf
-  - title: Floor Plans
-    link: floor-plans.pdf
-  - title: Space Plans
-    link: space-plans.pdf
+    link: TGF-Office-Brochure.pdf
+  # - title: Floor Plans
+  #   link: floor-plans.pdf
+  # - title: Space Plans
+  #   link: space-plans.pdf
 
 gems:
   - jekyll-sitemap

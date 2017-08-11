@@ -2667,11 +2667,21 @@ img {
    Docs: http://tachyons.io/docs/typography/font-family/
 
 */
+@font-face {
+  font-family: 'Courier Cyrllic Bold';
+  src: url("/fonts/courier-cyr-bold.woff2") format("woff2"), url("/fonts/courier-cyr-bold.woff") format("woff");
+  font-display: swap; }
+
+@font-face {
+  font-family: 'GF1';
+  src: url("/fonts/gf1.woff2") format("woff2"), url("/fonts/gf1.woff") format("woff");
+  font-display: swap; }
+
 .sans-serif {
   font-family: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, 'helvetica neue', helvetica, ubuntu, roboto, noto, 'segoe ui', arial, sans-serif; }
 
 .serif {
-  font-family: georgia, times, serif; }
+  font-family: 'Courier Cyrllic Bold', georgia,times,serif; }
 
 .system-sans-serif {
   font-family: sans-serif; }
@@ -7463,6 +7473,10 @@ code, .code {
   Add custom styles here.
 
 */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
 img {
   max-width: 100%;
   height: auto; }

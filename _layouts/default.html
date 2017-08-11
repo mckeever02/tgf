@@ -46,12 +46,12 @@
         </script>
 
     </head>
-    <body>
+    <body class="serif">
       <nav class="bg-black">
         <div class="mw8 center ph3 ph0-l db flex-l items-center w-100 border-box pv3">
           <a class="db tc tl-l mid-gray link dim mb3 mb0-l mx-auto mr-auto" href="/" title="Home">
             <img src="/images/tgf-logo.png" class="db dib-l v-mid tc tl-l center" alt="{{site.name}} logo">
-            <h1 class="ttu white dib f4 ma0 ml2-l  relative mt3 lh-solid">The Garment Factory</h1>
+            <h1 class="ttu white dib f4 ma0 ml2-l heading relative mt3 lh-solid">The Garment Factory</h1>
           </a>
           <div class="db tc tr-l">
             {% for item in site.navigation %}
@@ -84,30 +84,23 @@
 
       {{ content }}
 
-      <footer class="pv3 pv4-ns bg-texture-black white tracked-mega">
+      <footer class="pv3 pv4-ns bg-texture-black white tracked">
         <div class="mw8 ph3 ph0-ns center">
           <div class="flex flex-column flex-row-ns justify-between-ns mt4 items-center-ns">
             <div class="w-100 w-50-ns pr3-m pr5-l">
               <p>&copy; {{site.name}}, Merchant City</p>
               <ul class="list pa0">
                 <li class="db pv2">
-                  <a class="link yellow hover-white underline" href="/about">About us</a>
+                  <a class="link yellow hover-white underline" href="mailto:{{site.email}}">Contact us</a>
                 </li>
                 <li class="db pv2">
-                  <a class="link yellow hover-white underline" href="/contact">Contact us</a>
-                </li>
-                <li class="db pv2">
-                  <a class="link yellow hover-white underline" href="/bruchure.pdf">Download Brochure</a>
+                  <a class="link yellow hover-white underline" href="/downloads/{{site.brochure}}">Download Brochure</a>
                 </li>
               </ul>
             </div>
 
             <div class="w-100 w-50-ns pl3-m pl5-l lh-copy mt4 mt0-ns">
-              <img src="/images/in-the-loop-logo.png" alt="In the Loop logo">
-              <p>Want to keep updated?
-                <br>
-                <a class="link yellow hover-white underline" href="#">sign up</a> for the newsletter
-              </p>
+              <img class="fr-ns" src="/images/in-the-loop-logo.png" alt="In the Loop logo">
             </div>
           </div><!-- /flex -->
 
@@ -116,22 +109,23 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js"></script>
-    <script src="/js/player.min.js"></script>
+    <!-- <script src="/js/player.min.js"></script> -->
     <script async defer src="/js/scripts.js"></script>
 
     {%if page.class == "index"%}
     <script>
     $(function() {
-      var iframe = document.getElementById('welcomeVideo');
-      var player = $f(iframe);
-      $('.playFilm').on("click", function(ev) {
+      //var iframe = document.getElementById('welcomeVideo');
+      //var player = $f(iframe);
+      $('.playFilm').on("click", function() {
         $('#videoModal').addClass('db');
-        $('#welcomeVideo')[0].src += "&autoplay=1";
-        ev.preventDefault();
+        $('#welcomeVideo').trigger('play');
+        //ev.preventDefault();
       })
       $('.close-modal').on("click", function() {
         $('#videoModal').removeClass('db');
-        player.api("pause");
+        $('#welcomeVideo').trigger('pause');
+        //player.api("pause");
       })
     });
     </script>

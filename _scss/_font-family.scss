@@ -11,6 +11,19 @@
    Docs: http://tachyons.io/docs/typography/font-family/
 
 */
+@font-face {
+  font-family: 'Courier Cyrllic Bold';
+  src: url('/fonts/courier-cyr-bold.woff2') format('woff2'),
+       url('/fonts/courier-cyr-bold.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GF1';
+  src: url('/fonts/gf1.woff2') format('woff2'),
+       url('/fonts/gf1.woff') format('woff');
+  font-display: swap;
+}
 
 
 .sans-serif {
@@ -24,9 +37,7 @@
 }
 
 .serif {
-  font-family: georgia,
-               times,
-               serif;
+  font-family: 'Courier Cyrllic Bold', georgia,times,serif;
 }
 
 .system-sans-serif {
@@ -35,6 +46,11 @@
 
 .system-serif {
   font-family: serif;
+}
+
+.heading {
+  // font-family: 'GF1', serif;
+  // line-height: 1;
 }
 
 
@@ -104,4 +120,3 @@ code, .code {
   font-family: baskerville,
                serif;
 }
-

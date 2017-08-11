@@ -30,30 +30,28 @@ downloads:
 
 
     <div class="mt5">
-      <h2 class="ttu f3 f1-ns black">Downloads</h2>
+      <h2 class="ttu f3 f1-ns normal heading">Downloads</h2>
 
-      <h3 class="f5 underline tracked-mega mb3">Office</h3>
+      <!-- <h3 class="f5 underline tracked-mega mb3">Office</h3> -->
       <div class="flex flex-column flex-row-ns">
-        {%for download in page.downloads.office %}
-          <a class="{{site.button_classes}} mb4 mr4-ns" href="{{download.link}}" title="CLick to download {{download.title}}">{{download.title}}</a>
+        {%for download in site.downloads %}
+          <a class="{{site.button_classes}} mb4 mr4-ns" href=/downloads/"{{download.link}}" title="CLick to download {{download.title}}">{{download.title}}</a>
         {%endfor%}
       </div>
 
-      <h3 class="f5 underline tracked-mega mb3">Retail</h3>
+      <!-- <h3 class="f5 underline tracked-mega mb3">Retail</h3>
       <div class="flex flex-column flex-row-ns">
         {%for download in page.downloads.retail %}
           <a class="{{site.button_classes}} mb4 mr4-ns" href="{{download.link}}" title="CLick to download {{download.title}}">{{download.title}}</a>
         {%endfor%}
-      </div>
+      </div> -->
 
     </div>
 
-    <div class="mt5">
+    <div class="pv5">
       {%include enquiries.html%}
     </div>
 
   </div>
-
-  {%include image_slider.html%}
 
 </div><!-- /bg-texture -->
