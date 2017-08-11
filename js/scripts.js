@@ -6,8 +6,8 @@ $(function() {
     centerPadding: '300px',
     slidesToScroll: 1,
     appendArrows: $('.arrows-container'),
-    // autoplay: true,
-    // autoplaySpeed: 5000,
+    autoplay: true,
+    autoplaySpeed: 5000,
     responsive: [
       {
         breakpoint: 1520,
@@ -43,7 +43,9 @@ $(function() {
     slidesToShow: 1,
     slidesToScroll: 1,
     dots: true,
-    arrows: false
+    arrows: false,
+    autoplay: true,
+    autoplaySpeed: 5000
   });
 
   $('.tabgroup > div').hide();
