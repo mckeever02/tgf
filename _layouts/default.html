@@ -8,6 +8,8 @@
         <meta name="description" content="{{page.description}}">
         <meta name="viewport" content="width=device-width">
 
+        <meta name="google-site-verification" content="X3fYltxRgtlBms2mrX1IbjQdWYhRW5F59sFOwL8qJY0" />
+
         <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
         <meta name="theme-color" content="#ffffff">
@@ -19,16 +21,16 @@
         <!-- Open Graph Metadata -->
         <meta property="og:url" content="{{site.website}}" />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content="{{site.url}}/images/social-card.png" />
         <meta property="og:title" content="{%if page.title%} {{page.title}} {%else%} {{site.name}} {%endif%}" />
         <meta property="og:description" content="{%if page.description%} {{page.description}} {%else%} {{site.description}} {%endif%}" />
-        <meta property="og:image" content="/images/social-card.png" />
 
         <!-- Twitter Card Metadata -->
         <meta name="twitter:card" content="summary_large_image" />
         <!-- <meta name="twitter:site" content="{{site.social.twitter.username | prepend: "@" }}" /> -->
         <meta name="twitter:title" content="{%if page.title%} {{page.title}} {%else%} {{site.name}} {%endif%}" />
         <meta name="twitter:description" content="{%if page.description%} {{page.description}} {%else%} {{site.description}} {%endif%}">
-        <meta name="twitter:image" content="/images/social-card.png" />
+        <meta name="twitter:image" content="{{site.url}}/images/social-card.png" />
 
 
         <script>
@@ -37,7 +39,7 @@
           m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
           })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-          ga('create', 'UA-39366656-19', 'auto');
+          ga('create', 'UA-70808964-2', 'auto');
           ga('send', 'pageview');
 
         </script>

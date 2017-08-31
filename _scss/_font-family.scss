@@ -20,9 +20,12 @@
 
 @font-face {
   font-family: 'GF1';
-  src: url('/fonts/gf1.woff2') format('woff2'),
-       url('/fonts/gf1.woff') format('woff');
-  font-display: swap;
+  src: url('/fonts/GF1.eot');
+  src: url('/fonts/GF1.eot?#iefix') format('embedded-opentype'),
+  url('/fonts/GF1.ttf') format('truetype'),
+  url('/fonts/GF1.svg#gf1regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
 
@@ -48,10 +51,10 @@
   font-family: serif;
 }
 
-.heading {
-  // font-family: 'GF1', serif;
-  // line-height: 1;
-}
+// .heading {
+//   font-family: 'GF1', serif;
+//   //line-height: 1;
+// }
 
 
 /* Monospaced Typefaces (for code) */

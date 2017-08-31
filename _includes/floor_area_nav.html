@@ -2,7 +2,7 @@
   {% assign count = 6 %}
   {%for row in page.floor_area%}
   <li class="dib db-ns">
-    <a class="dib {% if count == 6 %} tab-active {%endif%} link underline black hover-bg-yellow pv2 ph2 ph3-ns tc" href="#floor{{count}}">{{row.floor}}</a>
+    <a class="dib {% if count == 6 %} tab-active {%endif%} link underline black hover-bg-yellow pv2 ph2 ph3-ns tc" href="#floor{{count}}">{{row.floor}} Floor</a>
   </li>
   {% assign count = count | minus: 1 %}
   {%endfor%}

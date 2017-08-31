@@ -22,26 +22,30 @@ image_slider:
     title: The Garment Factory on Imgram Street
 
 floor_area:
-  - floor: 6th
-    foot: "8,380"
-    metres: 778.5
-  - floor: 5th
-    foot: "8,364"
-    metres: 777
   - floor: 4th
-    foot: "8,396"
-    metres: 780
-  - floor: 3rd
-    foot: "8,396"
-    metres: 780
-  - floor: 2nd
-    foot: "8,288"
-    metres: 770
-  - floor: 1st
-    foot: "5,586"
-    metres: 519
+    foot: "8,390"
+    metres: 779.5
 
 ---
+
+<!-- - floor: 6th
+  foot: "8,380"
+  metres: 778.5
+- floor: 5th
+  foot: "8,364"
+  metres: 777
+- floor: 4th
+  foot: "8,396"
+  metres: 780
+- floor: 3rd
+  foot: "8,396"
+  metres: 780
+- floor: 2nd
+  foot: "8,288"
+  metres: 770
+- floor: 1st
+  foot: "5,586"
+  metres: 519 -->
 
 
 {%include hero.html%}
@@ -96,16 +100,16 @@ floor_area:
             <div class="tracked-mega mt4 mt5-ns mb3 mb0-ns ph3 flex flex-row justify-between flex-column-ns">
               <div class="flex align-items-center pv1 ph1 ph0-ns">
                 <span class=" h1 w1 dib br-pill ba b--black bg-yellow v-mid "></span>
-                <span class="dib ml2 v-mid">Office</span>
+                <span class="dib ml2 v-mid">Office Space</span>
               </div>
-              <div class="flex align-items-center pv1 ph1 ph0-ns">
+              <!-- <div class="flex align-items-center pv1 ph1 ph0-ns">
                 <span class=" h1 w1 dib br-pill ba b--black bg-orange v-mid"></span>
                 <span class="dib ml2 v-mid">Retail</span>
               </div>
               <div class="flex align-items-center pv1 ph1 ph0-ns">
                 <span class=" h1 w1 dib br-pill ba b--black bg-light-gray v-mid"></span>
                 <span class="dib ml2 v-mid">Core</span>
-              </div>
+              </div> -->
             </div>
 
           </div>
@@ -117,12 +121,12 @@ floor_area:
             <div id="floor{{count}}" class="flex flex-column flex-row-reverse-ns">
               <div class="db mb3 mb0-ns">
                 <div class="ba b--black ph3 pv2 tracked-mega w-100 tc tl-ns">
-                  <span class="db lh-copy">{{row.foot}} sq ft</span>
                   <span class="db lh-copy">{{row.metres}} sq m</span>
+                  <span class="db lh-copy">{{row.foot}} sq ft</span>
                 </div>
               </div>
               <div class="db">
-                <img src="/images/1st-floor.jpg" alt="1st Floor">
+                <img src="/images/{{row.floor}}-floor.png" alt="{{row.floor}} Floor Blueprint">
               </div>
             </div>
           {% assign count = count | minus: 1 %}

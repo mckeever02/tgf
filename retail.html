@@ -41,11 +41,20 @@ image_slider:
 floor_area:
   - floor: Ground
     unit_1:
-      foot: "2,917"
-      metres: "271"
+      foot: "2,863"
+      metres: "266"
     unit_2:
-      foot: "3,192"
-      metres: "297"
+      foot: "3,283"
+      metres: "305"
+
+  - floor: Basement
+    unit_1:
+      foot: "2,594"
+      metres: "241"
+    unit_2:
+      foot: "3,025"
+      metres: "281"
+
 
 downloads:
   - title: Retail Brochure
@@ -55,18 +64,7 @@ downloads:
 
 ---
 
-<!-- - floor: 1st Floor
-  unit_1:
-    foot: "2,669"
-    metres: "248"
 
-- floor: Basement
-  unit_1:
-    foot: "2,594"
-    metres: "241"
-  unit_2:
-    foot: "3,025"
-    metres: "281" -->
 
 
 {%include hero.html%}
@@ -169,6 +167,9 @@ downloads:
           {% assign count = 6 %}
           {%for row in page.floor_area%}
             <div id="floor{{count}}" class="flex flex-column flex-row-reverse-ns">
+              <div class="db">
+                <img src="/images/{{row.floor | downcase}}.png" alt="{{row.floor}} Blueprint">
+              </div>
               <div class="db mb3 mb0-ns">
                 <div class="ba b--black ph3 pv3 tracked-mega w-100">
                   <div class="db mb3">
@@ -200,10 +201,7 @@ downloads:
                   </div>
                   {%endif%}
                 </div>
-              </div>
-              <div class="db">
-                <img src="/images/{{row.floor | downcase}}.png" alt="{{row.floor}} Blueprint">
-              </div>
+              </div>   <!-- floor table -->
             </div>
           {% assign count = count | minus: 1 %}
           {%endfor%}
