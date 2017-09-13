@@ -22,9 +22,24 @@ image_slider:
     title: The Garment Factory on Imgram Street
 
 floor_area:
+  - floor: 6th
+    foot: "8,380"
+    metres: 778.5
+  - floor: 5th
+    foot: "8,364"
+    metres: 777
   - floor: 4th
     foot: "8,390"
     metres: 779.5
+  - floor: 3rd
+    foot: "8,396"
+    metres: 780
+  - floor: 2nd
+    foot: "8,288"
+    metres: 770
+  - floor: 1st
+    foot: "5,586"
+    metres: 519
 
 ---
 
@@ -93,7 +108,12 @@ floor_area:
         <div class="w-100 w-30-ns mr4-ns">
           <h2 class="heading black ttu f3 f1-ns mt0 normal">Plans</h2>
 
-          {%include floor_area_nav.html%}
+          <ul class="list tracked pl0 tabs nowrap ws-normal-ns overflow-x-auto overflow-visible-ns" data-tabgroup="floor-tabs">
+            <li class="dib db-ns">
+              <a class="dib tab-active link underline black hover-bg-yellow pv2 ph2 ph3-ns tc" href="#floor-4th">4th Floor</a>
+            </li>
+          </ul>
+
 
           <div class="mt5-ns">
 
@@ -116,21 +136,17 @@ floor_area:
 
         </div>
         <div id="floor-tabs" class="tabgroup w-100 w-70-ns">
-          {% assign count = 6 %}
-          {%for row in page.floor_area%}
-            <div id="floor{{count}}" class="flex flex-column flex-row-reverse-ns">
+            <div id="floor-4th" class="flex flex-column flex-row-reverse-ns">
               <div class="db mb3 mb0-ns">
                 <div class="ba b--black ph3 pv2 tracked-mega w-100 tc tl-ns">
-                  <span class="db lh-copy">{{row.metres}} sq m</span>
-                  <span class="db lh-copy">{{row.foot}} sq ft</span>
+                  <span class="db lh-copy">779.5 sq m</span>
+                  <span class="db lh-copy">8,390 sq ft</span>
                 </div>
               </div>
               <div class="db">
-                <img src="/images/{{row.floor}}-floor.png" alt="{{row.floor}} Floor Blueprint">
+                <img src="/images/4th-floor.png" alt="4th Floor Blueprint">
               </div>
             </div>
-          {% assign count = count | minus: 1 %}
-          {%endfor%}
         </div><!-- /tabgroup -->
 
       </div>

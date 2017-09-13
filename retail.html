@@ -166,8 +166,8 @@ downloads:
         <div id="floor-tabs" class="tabgroup w-100 w-70-ns">
           {% assign count = 6 %}
           {%for row in page.floor_area%}
-            <div id="floor{{count}}" class="flex flex-column flex-row-reverse-ns">
-              <div class="db">
+            <div id="floor{{count}}" class="flex flex-column">
+              <div class="db tc">
                 <img src="/images/{{row.floor | downcase}}.png" alt="{{row.floor}} Blueprint">
               </div>
               <div class="db mb3 mb0-ns">
