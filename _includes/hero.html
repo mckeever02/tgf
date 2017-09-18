@@ -1,12 +1,22 @@
 <div class="bg-black dt w-100 relative">
   <div class="cover bg-header-{{page.class}} bg-center bg-header">
+    {% if page.hero_button != true %}
     <div class="absolute w-100 h-100 bg-black-30 z-1"></div>
+    {%endif%}
     <div class="mw8 center ph3 ph0-l z-2 relative pv4 pv6-ns">
       <img class="{%if page.class != 'index'%}mt5-ns{%endif%} ma0 mb5 db" src="/images/{{page.hero_title | slugify}}-text.png" alt="{{page.hero_title}}" title="{{page.hero_title}}">
       <!-- <h2 class="f1 heading normal f-headline-l ttu measure lh-solid white mt5-ns ma0 mb4">{{page.hero_title}}</h2> -->
       {% if page.hero_button == true %}
-      <a class="{{site.button_classes}}" href="mailto:{{site.email}}">Make an Enquiry</a>
+      <div class="cf mb6">
+        <a class="{{site.button_classes}}" href="mailto:{{site.email}}">Request Information</a>
+      </div>
+      <!-- <a class="db mb5" href="#">
+        <img src="/images/360-virtual-tour.png" alt="Click to take our Virtual Tour">
+      </a> -->
       {%endif%}
     </div>
   </div>
+  {% if page.hero_button == true %}
+  <img class="absolute divider-line left-0 w-100 pointer-events-none" src="../images/divider-line.png">
+  {%endif%}
 </div>

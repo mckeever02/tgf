@@ -39,6 +39,10 @@ connections:
     destination: Train Station
     time: 10.0
     movement: walk
+  - location: Buchanan Street
+    destination: Bus Station
+    time: 12.0
+    movement: walk
   - location: M8 Motorway
     time: 4.0
     movement: drive
@@ -105,28 +109,48 @@ map:
 
 
     <div class="mt3 mt5-ns">
-      <div class="flex flex-column flex-row-l">
-        <div class="w-100 w-50-ns pr5-ns">
-          <h2 class="heading ttu f1 black">Merchant<br> City</h2>
+      <h2 class="heading ttu f1 black">Merchant City</h2>
 
-          <div class="measure-narrow-l measure-m tracked lh-copy">
-            <p>Merchant City is just minutes away from George Square and the Style Mile shopping district.It is one of Glasgow’s most vibrant areas brimming with art, culture, and fashion and complete with fabulous places to eat and drink. It hosts a number of nationally recognised restaurant names alongside eclectic independent bars, galleries and quirky little shops to explore.</p>
+      <div class="lh-copy">
+        <p>Merchant City is just minutes away from George Square and the Style Mile shopping district.It is one of Glasgow’s most vibrant areas brimming with art, culture, and fashion and complete with fabulous places to eat and drink. It hosts a number of nationally recognised restaurant names alongside eclectic independent bars, galleries and quirky little shops to explore.</p>
 
-            <p>Also just moments away sits Merchant Square – a stylish hub of independent bars and restaurants all under one roof.</p>
-          </div>
+        <p>Also just moments away sits Merchant Square – a stylish hub of independent bars and restaurants all under one roof.</p>
+      </div>
+
+    </div>
+
+    <div id="connections" class="pv3 pv5-ns">
+      <div class="mw8 center ph3 ph0-l">
+        <h2 class="heading ttu f2 f1-ns black tc">Connections</h2>
+
+        <div class="mt3 mt5-ns tracked f6">
+          {% for item in page.connections %}
+          {% assign total_time = 18.0 %}
+            <div class="flex flex-row w-100 items-center">
+              <div class="w-90 pr3 relative">
+                <span class="db">{{item.location}}</span>
+                <span class="db mb2">{{item.destination}}</span>
+                {% assign number = item.time | divided_by: total_time | times: 100 | round | minus: 5 %}
+                {%if item.movement == "walk"%}
+                <img class="absolute dn db-ns progress-icon" style="left: {{number}}%" src="/images/walk-icon.png" alt="Walking icon">
+                {%else%}
+                <img class="absolute dn db-ns progress-icon progress-icon-drive {{number}}" style="left: {{number}}%" src="/images/drive-icon.png" alt="Driving icon">
+                {%endif%}
+                <progress class="w-100 progress" max="{{total_time}}" value="{{item.time}}"></progress>
+              </div>
+              <div class="w-10 tc mt3 heading">
+                <span class="db f2">{{item.time | round}}</span>
+                <small class="db ttu">mins</small>
+              </div>
+            </div>
+          {% endfor %}
 
         </div>
-        <div class="w-100 w-50-ns pt3 pt5-ns tc tl-l">
-          <img class="nb5-l z-2 relative" src="/images/merchant-sq-1.jpg" alt="Image of Merchant Square">
-          <img class="nl5-l" src="/images/merchant-sq-2.jpg" alt="Image of Merchant Square">
-        </div>
+
       </div>
     </div>
 
-  </div>
-
-  {%include image_slider.html%}
-
+  </div><!-- /mw8 -->
 
   <div id="local-area" class="overflow-auto">
       <div class="relative center map bg-center contain center nowrap">
@@ -202,36 +226,11 @@ map:
     </div><!-- /flex -->
   </div><!-- /mw7 -->
 
+  <div class="bg-texture-white pv5">
+    {%include image_slider.html%}
+  </div>
+
+
 
 
 </div><!-- /bg-texture -->
-<div id="connections" class="bg-texture-white pv3 pv5-ns">
-  <div class="mw8 center ph3 ph0-l">
-    <h2 class="heading ttu f2 f1-ns black tc">Connections</h2>
-
-    <div class="mt3 mt5-ns tracked f6">
-      {% for item in page.connections %}
-      {% assign total_time = 18.0 %}
-        <div class="flex flex-row w-100 items-center">
-          <div class="w-90 pr3 relative">
-            <span class="db">{{item.location}}</span>
-            <span class="db mb2">{{item.destination}}</span>
-            {% assign number = item.time | divided_by: total_time | times: 100 | round | minus: 5 %}
-            {%if item.movement == "walk"%}
-            <img class="absolute dn db-ns progress-icon" style="left: {{number}}%" src="/images/walk-icon.png" alt="Walking icon">
-            {%else%}
-            <img class="absolute dn db-ns progress-icon progress-icon-drive {{number}}" style="left: {{number}}%" src="/images/drive-icon.png" alt="Driving icon">
-            {%endif%}
-            <progress class="w-100 progress" max="{{total_time}}" value="{{item.time}}"></progress>
-          </div>
-          <div class="w-10 tc mt3 heading">
-            <span class="db f2">{{item.time | round}}</span>
-            <small class="db ttu">mins</small>
-          </div>
-        </div>
-      {% endfor %}
-
-    </div>
-
-  </div>
-</div>

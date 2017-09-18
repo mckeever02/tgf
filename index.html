@@ -4,45 +4,65 @@ title: The Garment Factory | Where Ideas Are Made
 description: "The Garment Factory is a unique space in Glasgow’s Merchant City, where the environment is as innovative and creative as the tenants."
 class: index
 hero_button: true
-hero_title: Where ideas are made
+hero_title: A cut above the rest
+
+image_slider:
+  - image: reception-waiting-area
+    title: Reception waiting area
+  - image: empty-office
+    title: The Office Space
+  - image: montrose-street
+    title: An exciting retail opportunity at The Garment Factory
+  - image: ingram-street
+    title: The Garment Factory on Imgram Street
+
 ---
 
 {%include hero.html%}
 
 <div class="bg-texture-moon-gray">
+  <div class="relative">
+  </div>
   <div class="mw8 center ph3 ph0-l">
     <div class="bg-white w-50-l pa4 nt5 relative z-2">
       <p class="lh-copy ma0 tracked">The Garment Factory is a unique space in Glasgow’s Merchant City, where the environment is as innovative and creative as the tenants. Our vision is to create contemporary flexible office space designed to appeal to a range of tenants. </p>
     </div>
     <div class="flex flex-column flex-row-ns items-center-ns mt5">
-      <div class="w-100 w-50-m w-40-l pr3-ns order-2 order-1-ns">
+      <div class="w-100 w-third-l pr3-l">
         <h2 class="black heading ttu f3 f2-m f1-l mt0 normal">Welcome to The Garment Factory</h2>
         <div class="tracked pr4-l pb3 lh-copy">
           <p>The Garment Factory will comprise of 6 floors of office accommodation ranging between 5,586 sq ft to 8,385 sq ft. A transformation will be undertaken within The Garment Factory to combine the restoration of many of the original features including exposed ceilings, steel and brickwork, wooden flooring and ornate staircases with the introduction of contemporary finishes throughout, to provide a 21st century workplace.</p>
         </div>
-        <a class="{{site.yellow_button_classes}} playFilm" href="javascript:void(0)">Play Video</a>
 
       </div>
-      <div class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-50-m w-60-l">
+      <div class="pl3-l mb4 mb0-ns w-100 w-two-thirds-l">
+        <img src="/images/floor-space-diagram.jpg" alt="Floor space diagram">
+      </div>
+    </div>
+
+  </div><!-- /mw8 -->
+
+  {%include image_slider.html%}
+
+  <div class="mw8 center ph3 ph0-l">
+    <div class="flex flex-column flex-row-ns justify-between-ns mt5">
+      <div class="mb4 mb0-ns w-100 w-50-m w-60-l pt4-ns">
         <div class="relative">
           <a href="javascript:void(0)" class="db absolute absolute-center z-2">
             <img class="grow-large playFilm" src="/images/play.png" alt="Play Film" title="Play Film">
           </a>
-          <img src="/images/video-screenshot.jpg" class="db z-1 relative" alt="Screenshot of welcome video">
+          <img src="/images/video-screenshot.jpg" class="db z-1 relative w-100" alt="Screenshot of welcome video">
         </div>
-      </div>
-    </div>
-
-    <div class="flex flex-column flex-row-ns justify-between-ns mt5">
-      <div class="mb4 mb0-ns w-100 w-50-m w-70-l pt4-ns">
-        <img src="/images/location.jpg" class="db z-1 relative" alt="Photo of the location of The Garment Factory">
       </div>
       <div class="w-100 w-50-m w-30-l relative z-2 pl4-m">
         <h2 class="black heading ttu f1-m f-subheadline-l ma0 mt0-ns nl5-m nl6-l tr-l normal">Location</h2>
           <div class="tracked mb3 lh-copy">
             <p>Getting here couldn’t be simpler, with main line &amp; underground stations within a few minutes walk, plenty of off street parking and easy access to the M8 motorway.</p>
           </div>
-          <a class="{{site.yellow_button_classes}}" href="/location">Explore</a>
+          <div class="cf">
+            <a class="{{site.yellow_button_classes}}" href="/location">Explore</a>
+          </div>
+          <a class="{{site.yellow_button_classes}} playFilm" href="javascript:void(0)">Play Film</a>
       </div>
 
     </div>

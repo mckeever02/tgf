@@ -36,6 +36,13 @@ img {
 
 .bg-header-index {
   background-image: url('../images/index-header.jpg');
+  min-height: 100vh;
+}
+
+.bg-divider {
+  background-image: url('../images/divider-line.png');
+  background-position: top left;
+  background-size: contain;
 }
 
 .bg-header-office {
@@ -58,8 +65,14 @@ img {
   background-image: url('../images/texture.png');
 }
 
+.bg-texture-divider {
+  background-image: url('../images/divider-line.png'), url('../images/texture.png'), linear-gradient($moon-gray, $moon-gray);
+  background-repeat: no-repeat, repeat;
+  background-position: -10%, center, center;
+  background-size: 100%;
+}
+
 .bg-texture-moon-gray {
-  background-image: url('../images/texture.png'), linear-gradient($moon-gray, $moon-gray);
 }
 
 .bg-texture-mid-gray {
@@ -251,4 +264,12 @@ progress {
 .marker-the-drum {
   top: 790px;
   right: 220px;
+}
+
+.divider-line {
+  bottom: -4em;
+}
+
+.pointer-events-none {
+  pointer-events: none;
 }
