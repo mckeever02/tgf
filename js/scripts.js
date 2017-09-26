@@ -69,6 +69,29 @@ $(function() {
   });
 
 
-
+  // var cookie = Cookies.get('splash');
+  //
+  // if (cookie == "active") {
+  //   $('#splash').remove();
+  // } else {
+  //   $('#splash').removeClass('clip');
+  // }
 
 });
+
+// $(window).load(function(){
+//   Cookies.set('splash', 'active', { path: '/' });
+//   //Cookies.remove('splash');
+// })
+//
+var animation = bodymovin.loadAnimation({
+  container: document.getElementById('intro-animation'),
+  renderer: 'svg',
+  loop: false,
+  autoplay: true,
+  path: 'tgf-intro-animation.json'
+})
+
+setTimeout(function(){
+  $("#splash").fadeOut();
+}, 5000);
