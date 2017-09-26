@@ -94,4 +94,4 @@ var animation = bodymovin.loadAnimation({
 
 setTimeout(function(){
   $("#splash").fadeOut();
-}, 5000);
+}, 7000);
