@@ -86,7 +86,7 @@ $(function() {
 //
 var animation = bodymovin.loadAnimation({
   container: document.getElementById('intro-animation'),
-  renderer: 'svg',
+  renderer: 'canvas',
   loop: false,
   autoplay: true,
   path: 'tgf-intro-animation.json'
