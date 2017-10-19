@@ -1,5 +1,10 @@
 <h4 class="ttu f3 f1-ns ma0 mb5 heading normal">All Enquiries:</h4>
-<div class="flex flex-column flex-row-ns">
+{%if page.url contains "info"%}
+<div class="mb5 cf">
+  <a class="{{site.button_classes}}" href="mailto:{{site.email}}">Request Information</a>
+</div>
+{%endif%}
+<div class="flex flex-column flex-row-ns w-100 justify-between-ns">
   <div class="db pr5-ns">
     <h5 class="tracked f4 mt0">Letting agent</h5>
     <img src="/images/ryden-logo.png" alt="Ryden logo">
