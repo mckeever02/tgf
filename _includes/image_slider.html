@@ -3,7 +3,7 @@
     <div class="slider tc">
       {% for item in page.image_slider %}
       <div class="tc center d-inline-block ph2">
-        <img src="/images/{{item.image}}.jpg" alt="{{item.title}}">
+        <img src="/images{{page.url}}{{item.image}}.jpg" alt="{{item.title}}">
         <p class="pv2 tracked-mega">{{item.title}}</p>
       </div>
       {%endfor%}
